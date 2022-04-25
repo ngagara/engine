@@ -1,0 +1,193 @@
+// Roboto
+@font-face {
+  src: url('./Roboto/Roboto-Thin.woff2') format('woff2'), url('./Roboto/Roboto-Thin.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./Roboto/Roboto-ThinItalic.woff2') format('woff2'), url('./Roboto/Roboto-ThinItalic.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./Roboto/Roboto-Regular.woff2') format('woff2'), url('./Roboto/Roboto-Regular.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./Roboto/Roboto-Italic.woff2') format('woff2'), url('./Roboto/Roboto-Italic.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./Roboto/Roboto-Medium.woff2') format('woff2'), url('./Roboto/Roboto-Medium.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url('./Roboto/Roboto-MediumItalic.woff2') format('woff2'),
+    url('./Roboto/Roboto-MediumItalic.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./Roboto/Roboto-Bold.woff2') format('woff2'), url('./Roboto/Roboto-Bold.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./Roboto/Roboto-BoldItalic.woff2') format('woff2'), url('./Roboto/Roboto-BoldItalic.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./Roboto/Roboto-Black.woff2') format('woff2'), url('./Roboto/Roboto-Black.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./Roboto/Roboto-BlackItalic.woff2') format('woff2'), url('./Roboto/Roboto-BlackItalic.woff') format('woff');
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+// SF UI Text
+@font-face {
+  src: url('./SFUIText/SFUIText-Light.woff2') format('woff2'), url('./SFUIText/SFUIText-Light.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url('./SFUIText/SFUIText-LightItalic.woff2') format('woff2'),
+    url('./SFUIText/SFUIText-LightItalic.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./SFUIText/SFUIText-Regular.woff2') format('woff2'), url('./SFUIText/SFUIText-Regular.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url('./SFUIText/SFUIText-RegularItalic.woff2') format('woff2'),
+    url('./SFUIText/SFUIText-RegularItalic.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./SFUIText/SFUIText-Medium.woff2') format('woff2'), url('./SFUIText/SFUIText-Medium.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url('./SFUIText/SFUIText-MediumItalic.woff2') format('woff2'),
+    url('./SFUIText/SFUIText-MediumItalic.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url('./SFUIText/SFUIText-SemiBold.woff2') format('woff2'),
+    url('./SFUIText/SFUIText-SemiBold.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url('./SFUIText/SFUIText-SemiBoldItalic.woff2') format('woff2'),
+    url('./SFUIText/SFUIText-SemiBoldItalic.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./SFUIText/SFUIText-Bold.woff2') format('woff2'), url('./SFUIText/SFUIText-Bold.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url('./SFUIText/SFUIText-BoldItalic.woff2') format('woff2'),
+    url('./SFUIText/SFUIText-BoldItalic.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('./SFUIText/SFUIText-Heavy.woff2') format('woff2'), url('./SFUIText/SFUIText-Heavy.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src:
+    url('./SFUIText/SFUIText-HeavyItalic.woff2') format('woff2'),
+    url('./SFUIText/SFUIText-HeavyItalic.woff') format('woff');
+  font-family: 'SF UI Text';
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

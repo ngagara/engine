@@ -1,0 +1,61 @@
+/* Бэкграунд */
+$bg1_ltheme: #301D1A;
+$bg2_ltheme: #3E2723;
+$bg3_ltheme: #4A3632;
+
+$bg1_white_ltheme: #E8EAFF;
+$bg2_white_ltheme: #F4F4F4;
+$bg3_white_ltheme: #FFFFFF;
+
+/* Цвета элементов */
+$accent_high_emphasis_ltheme: #0090D6;
+$accent_low_emphasis_ltheme: #41B2E9;
+$accent_disabled_ltheme: #93DCFF;
+
+/* Цвета текста*/
+$text_high_emphasis_ltheme: #FFFFFF;
+$text_low_emphasis_ltheme: #CFCFCF;
+$text_disabled_ltheme: #939393;
+
+$text_high_emphasis_ltheme: #301D1A;
+$text_low_emphasis_ltheme: #858585;
+$text_disabled_ltheme: #301D1A;
+
+/* Цвета иконок*/
+$icon_high_emphasis_ltheme: #FFFFFF;
+$icon_low_emphasis_ltheme: #CFCFCF;
+$icon_disabled_ltheme: #939393;
+
+$icon_high_emphasis_ltheme: #453532;
+$icon_low_emphasis_ltheme: #858585;
+$icon_disabled_ltheme: #BDBDBD;
+
+/* Цвета дополнительные */
+$red: #EE0000;
+$red_hover: #FF5B5B;
+
+$green: #12E000;
+$green_hover: #41FF30;
+
+$main-font: 'Roboto', 'Arial', 'Helvetica', sans-serif !default;
+
+@mixin regular-text($size, $line-height) {
+  font-family: 'SF UI Display', 'Roboto', 'Open Sans';
+  font-weight: 400;
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@mixin medium-text($size, $line-height) {
+  font-family: 'SF UI Display', 'Roboto', 'Open Sans';
+  font-weight: 500;
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@mixin buttonDefault() {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+

@@ -1,0 +1,31 @@
+@import 'normalize.css';
+@import './variables.scss';
+
+html,
+body {
+  font-family: $main-font;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after,
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  max-height: 100%;
+}
