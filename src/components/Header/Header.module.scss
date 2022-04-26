@@ -1,0 +1,21 @@
+@import '../../_variables.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $bg-first;
+  width: 100%;
+  min-height: 47px;
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    height: 47px;
+
+  }
+
+  svg path {
+    fill: $icon_high_accent_light;
+  }
+}
