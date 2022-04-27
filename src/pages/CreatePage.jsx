@@ -1,14 +1,13 @@
-import { useNavigate } from "react-router-dom";
-import Button from "../ui-kit/Button/Button";
+import { Container, Button } from "../ui-kit";
 
 const CreatePage = () => {
-  let navigate = useNavigate();
+  console.log("render create page");
 
-  const handleClick = () => {
-    navigate("/");
-  };
-
-  return <Button onClick={handleClick()}>asd</Button>;
+  return (
+    <Container>
+      <Button>asd</Button>
+    </Container>
+  );
 };
 
 export default CreatePage;

@@ -1,0 +1,24 @@
+@import '../../../_variables.scss';
+@import '../../../mixins.scss';
+
+.tabs {
+   display: flex;
+   flex-direction: row;
+}
+
+.tab {
+   padding: 15px;
+   @include text-regular($color: $text_high_accent_light);
+   text-decoration: none; 
+
+   &Active {
+      background: $bg_third;
+      color: $text_high_accent_light;
+   } 
+
+   &:hover {
+      background: $bg_third;
+      color: $text_low_accent_light;
+   }
+}
+

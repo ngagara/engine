@@ -1,14 +1,15 @@
-import "./index.scss";
+import styles from "./Button.module.scss";
 import classNames from "classnames";
 
-export default function Button({ value, disabled, bg }) {
+export const Button = ({ children, disabled, bgWhite, onClick }) => {
   return (
     <button
       type="button"
-      className={classNames("btn", { btnWhite: bg })}
+      className={classNames(styles.btn, { [styles.btnWhite]: bgWhite })}
       disabled={disabled}
+      onClick={onClick}
     >
-      {value}
+      {children}
     </button>
   );
-}
+};

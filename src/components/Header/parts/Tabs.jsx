@@ -1,18 +1,7 @@
 import { useState } from "react";
 import Tab from "./Tab";
-
-const MENU = [
-  {
-    id: 1,
-    link: "/",
-    name: "Книги"
-  },
-  {
-    id: 2,
-    link: "/test",
-    name: "Тест бота"
-  }
-];
+import styles from "./Tabs.module.scss";
+import { MENU } from "../../../constants";
 
 const Tabs = () => {
   // const [value, setValue] = useState("Мои Компании");
@@ -22,7 +11,7 @@ const Tabs = () => {
   // };
 
   return (
-    <ul>
+    <ul className={styles.tabs}>
       {MENU &&
         MENU.map((link) => (
           <Tab key={link.id} link={link.link} name={link.name} />

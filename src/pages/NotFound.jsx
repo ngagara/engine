@@ -1,5 +1,19 @@
+import { Button, Container } from "../ui-kit";
+import { useNavigate } from "react-router-dom";
+
 const NotFound = () => {
-  return <h1>Not Found</h1>;
+  let navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
+
+  return (
+    <Container>
+      <Button onClick={handleClick}>НАЗАД</Button>
+      <h2>Not Found</h2>
+    </Container>
+  );
 };
 
 export default NotFound;

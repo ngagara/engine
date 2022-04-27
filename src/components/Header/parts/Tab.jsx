@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom";
-import styles from "./Tab.module.scss";
+import { NavLink } from "react-router-dom";
+import styles from "./Tabs.module.scss";
+
+const setActive = ({ isActive }) =>
+  isActive ? `${styles.tab} ${styles.tabActive}` : `${styles.tab}`;
 
 const Tab = ({ key, name, link }) => {
   return (
-    <div className={styles.tab}>
-      <Link to={link} key={key}>
-        {name}
-      </Link>
-    </div>
+    <NavLink className={setActive} to={link} key={key}>
+      {name}
+    </NavLink>
   );
 };
 
