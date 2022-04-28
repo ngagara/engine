@@ -1,6 +1,8 @@
 @import '../../_variables.scss';
+@import '../../_mixins.scss';
 
 .btn {
+  @include text-regular($color: $text_high_accent_light);
   background-color: $el_accent_high;
   color: $text_high_accent_light;
   border: 2px solid $el_accent_high;
@@ -10,11 +12,6 @@
   border-radius: 4px;
   padding: 8px 20px;
   outline: none;
-  font-family: inherit;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
 
     &:hover {
       background-color: $el_accent_low;

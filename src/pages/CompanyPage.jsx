@@ -1,9 +1,15 @@
-// import { Button } from "../src/ui-kit/index.js";
-import Button from "../ui-kit/Button/Button";
+import { Container, Button } from "../ui-kit";
 
 export default function CompanyPage() {
   return (
-    <>{/* <Button value={"hello world"} /> */}</>
-    // <h1>asd</h1>
+    <Container>
+      <h1>ui</h1>
+      <Button>Test</Button>
+      <Button disabled>Test</Button>
+      <Button bgWhite>Test</Button>
+      <Button bgWhite disabled>
+        Test
+      </Button>
+    </Container>
   );
 }
