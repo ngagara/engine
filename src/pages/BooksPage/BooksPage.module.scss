@@ -1,7 +1,25 @@
 @import '../../_variables.scss';
+@import '../../mixins.scss';
 
 .page {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
   background-color: $bg_fourth;
+
+  .paper {
+    margin: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $bg_fourth;
+
+    &Paper {
+     flex-wrap: wrap;
+    }
+  }
+
 }

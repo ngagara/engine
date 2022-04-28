@@ -4,6 +4,11 @@
 .tabs {
    display: flex;
    flex-direction: row;
+
+   li {
+      list-style-type: none;
+      display: flex;
+   }
 }
 
 .tab {

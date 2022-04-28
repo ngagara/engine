@@ -7,7 +7,9 @@ const Tabs = () => {
     <ul className={styles.tabs}>
       {MENU &&
         MENU.map((link) => (
-          <Tab key={link.id} link={link.link} name={link.name} />
+          <li key={link.id}>
+            <Tab link={link.link} name={link.name} />
+          </li>
         ))}
     </ul>
   );
