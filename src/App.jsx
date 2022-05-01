@@ -8,12 +8,12 @@ import AppLayout from "./pages/AppLayout";
 import { NEW_BOOK } from "./constants";
 
 const MOCK = [
-  // {
-  //   id: 1,
-  //   name: "Преступный маг",
-  //   src:
-  //     "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-  // }
+  {
+    id: 1,
+    name: "Преступный маг",
+    src:
+      "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+  }
 ];
 
 export default function App() {

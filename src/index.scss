@@ -1,9 +1,10 @@
-@import 'normalize.css';
+@import '~normalize.css';
 @import './_variables.scss';
+@import './vendor/fonts/index.scss';
 
 html,
 body {
-  font-family: 'Rubik', 'Arial', 'Helvetica', sans-serif;
+  font-family: $font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: $subtitle-document;

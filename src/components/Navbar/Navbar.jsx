@@ -1,4 +1,4 @@
-import { LogoIcon } from "../../vendor/icons";
+import { LogoIcon } from "../../img/icons";
 import { Container } from "../../ui-kit";
 import Tabs from "./parts/Tabs";
 import styles from "./Navbar.module.scss";
