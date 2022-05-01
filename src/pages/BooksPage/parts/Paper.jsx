@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
 import styles from "./Paper.module.scss";
 
-const Paper = ({ src, title, className }) => {
+const Paper = ({ src, title, id, className }) => {
+
   return (
-    <div className={`${styles.paper} ${className}`}>
-      <img className={styles.img} src={src} alt={title} />
+    <Link className={`${styles.paper} ${className}`} to={`/edit/${id}`}>
+      <img className={styles.img} src={src} alt={`Карточка ${title}`} />
       <h2 className={styles.title}>{title}</h2>
-    </div>
+    </Link>
   );
 };
 

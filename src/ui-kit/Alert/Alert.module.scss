@@ -1,0 +1,18 @@
+@import '../../_variables.scss';
+@import '../../_mixins.scss';
+
+.alert {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .text {
+        @include text-regular($color: $text_high_accent_light);
+        margin-left: 12px;
+
+        &Red {
+            color: $red;
+        }
+    }
+
+}

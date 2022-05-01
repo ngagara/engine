@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import BooksPage from "./pages/BooksPage/BooksPage";
-import EditPage from "./pages/EditPage";
+import EditPage from "./pages/EditPage/EditPage";
 import CompanyPage from "./pages/CompanyPage";
 import NotFound from "./pages/NotFound";
 import AppLayout from "./pages/AppLayout";
@@ -11,41 +11,34 @@ const MOCK = [
   {
     id: 1,
     name: "Преступный маг",
-    src:
-      "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    src: "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
   }
 ];
 
 export default function App() {
-  const [isPaper, setPaper] = useState([]);
-  //Проверка на Новую книгу
+  const [isPapers, setPaper] = useState([]);
   const [disabledButton, setDisabledButton] = useState(false);
-  const [hiddenButton, sethiddenButton] = useState(true);
+  const [hiddenButton, setHiddenButton] = useState(true);
 
   useEffect(() => {
     if (MOCK.length === 0) {
       setPaper((prev) => [...prev, { ...NEW_BOOK }]);
-      sethiddenButton(false);
+      setHiddenButton(false);
     } else {
-      sethiddenButton(true);
+      setHiddenButton(true);
       setPaper(MOCK);
     }
   }, []);
 
-  // Проверка на Новую книгу, пока не закончишь старую нельзя создать новую
-  useEffect(() => {
-    isPaper.forEach((paper) => {
-      paper.name === "Новая книга"
-        ? setDisabledButton(true)
-        : setDisabledButton(false);
-    });
-  }, [isPaper]);
-
   const handelAddNewBook = () => {
-    setPaper((prev) => {
-      let prevId = prev[prev.length - 1].id;
-      return [...prev, { ...NEW_BOOK, id: (prevId += 1) }];
-    });
+    if (isPapers[isPapers.length - 1].name === "Новая книга") {
+      setDisabledButton(true)
+    } else {
+      setPaper((prev) => {
+        let prevId = prev[prev.length - 1].id;
+        return [...prev, { ...NEW_BOOK, id: (prevId += 1) }];
+      });
+    }
   };
 
   return (
@@ -58,12 +51,12 @@ export default function App() {
             <BooksPage
               handelAddNewBook={handelAddNewBook}
               hiddenButton={hiddenButton}
-              isPaper={isPaper}
+              isPapers={isPapers}
               disabledButton={disabledButton}
             />
           }
         />
-        <Route path="books/:id" element={<EditPage />} />
+        <Route path="edit/:id" element={<EditPage isPapers={isPapers} />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
