@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { classNames } from 'classnames';
+import { Outlet, useParams } from "react-router-dom";
 import { Container } from "../../ui-kit";
 import styles from "./EditPage.module.scss";
 import Sidebar from './../../components/Sidebar/Sidebar';
@@ -16,9 +15,12 @@ const EditPage = ({ isPapers }) => {
   }, [id])
 
   return (
-    <Container className={styles.container}>
-      <Sidebar/>
-    </Container>
+    <section className={styles.page}>
+      <Sidebar name={isBook.name} />
+      <Container>
+        <Outlet/>
+      </Container>
+    </section >
   );
 };
 

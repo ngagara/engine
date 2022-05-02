@@ -1,7 +1,12 @@
+@import '../../_variables.scss';
+@import '../../mixins.scss';
+
 .sidebar {
-    max-height: calc(100vh - 47px);
-    height: 100%;
-    width: 300px;
-    background-color: #3E2723;
-    ;
+    min-height: calc(100vh - 47px);
+    min-width: 300px;
+    background-color: $bg_second;
+
+    &Header {
+        padding: 30px 30px 22px 30px;
+    }
 }

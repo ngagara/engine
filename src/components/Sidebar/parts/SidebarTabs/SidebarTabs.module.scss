@@ -1,0 +1,47 @@
+@import '../../../../_variables.scss';
+@import '../../../../mixins.scss';
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    li {
+        list-style-type: none;
+        display: flex;
+    }
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    padding: 18.5px 30px;
+    @include text-regular($color: $text_low_accent_light);
+    text-decoration: none;
+    width: 100%;
+
+    &Text {
+        margin-left: 10px;
+    }
+
+    &Active {
+        background: $bg_third;
+        color: $text_high_accent_light;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background-color: $el_accent_high;
+        }
+    }
+
+    &:hover {
+        background: $bg_third;
+        color: $text_low_accent_light;
+    }
+}

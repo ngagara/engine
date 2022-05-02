@@ -13,7 +13,7 @@
 
 .tab {
    padding: 15px;
-   @include text-regular($color: $text_high_accent_light);
+   @include text-regular($color: $text_low_accent_light);
    text-decoration: none; 
 
    &Active {

@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import BooksPage from "./pages/BooksPage/BooksPage";
 import EditPage from "./pages/EditPage/EditPage";
-import CompanyPage from "./pages/CompanyPage";
+import LoginPage from "./pages/LoginPage";
 import NotFound from "./pages/NotFound";
 import AppLayout from "./pages/AppLayout";
-import { NEW_BOOK } from "./constants";
+import { NEW_BOOK, SIDEBAR_MENU } from "./constants";
 
 const MOCK = [
   {
@@ -43,10 +43,10 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<AppLayout />}>
-        <Route index element={<CompanyPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/*" element={<AppLayout />}>
         <Route
-          path="books"
+          index
           element={
             <BooksPage
               handelAddNewBook={handelAddNewBook}
@@ -56,7 +56,11 @@ export default function App() {
             />
           }
         />
-        <Route path="edit/:id" element={<EditPage isPapers={isPapers} />} />
+        <Route path="edit/:id/*" element={<EditPage isPapers={isPapers} />} >
+          {SIDEBAR_MENU && SIDEBAR_MENU.map(route => (
+            <Route key={route.id} path={route.link} element={route.name} />
+          ))}
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
