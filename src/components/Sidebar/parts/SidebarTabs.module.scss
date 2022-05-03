@@ -1,5 +1,5 @@
-@import '../../../../_variables.scss';
-@import '../../../../mixins.scss';
+@import '../../../_variables.scss';
+@import '../../../mixins.scss';
 
 .tabs {
     display: flex;
@@ -15,10 +15,14 @@
 .tab {
     display: flex;
     align-items: center;
-    padding: 18.5px 30px;
+    padding: 15px 30px;
     @include text-regular($color: $text_low_accent_light);
     text-decoration: none;
     width: 100%;
+
+    svg path {
+        fill: $icon_low_accent_light;
+    }
 
     &Text {
         margin-left: 10px;
@@ -28,6 +32,10 @@
         background: $bg_third;
         color: $text_high_accent_light;
         position: relative;
+
+        svg path {
+            fill: $icon_high_accent_light;
+        }
 
         &::after {
             content: '';
@@ -42,6 +50,10 @@
 
     &:hover {
         background: $bg_third;
-        color: $text_low_accent_light;
+        color: $text_high_accent_light;
+
+        svg path {
+            fill: $icon_high_accent_light;
+        }
     }
 }

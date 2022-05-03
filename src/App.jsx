@@ -56,10 +56,12 @@ export default function App() {
             />
           }
         />
-        <Route path="edit/:id/*" element={<EditPage isPapers={isPapers} />} >
+        <Route path="books/:id/*" element={<EditPage isPapers={isPapers} />} >
           {SIDEBAR_MENU && SIDEBAR_MENU.map(route => (
             <Route key={route.id} path={route.link} element={route.name} />
           ))}
+          {/* отправлять кудато */}
+          <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Route>

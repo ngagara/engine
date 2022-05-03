@@ -16,6 +16,10 @@ body {
   padding: 0;
 }
 
+svg path {
+  fill: $icon_high_accent_light;
+}
+
 *,
 *::before,
 *::after,

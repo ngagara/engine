@@ -4,7 +4,7 @@ import styles from "./Paper.module.scss";
 const Paper = ({ src, title, id, className }) => {
 
   return (
-    <Link className={`${styles.paper} ${className}`} to={`/edit/${id}/plot`}>
+    <Link className={`${styles.paper} ${className}`} to={`/books/${id}/plot`}>
       <img className={styles.img} src={src} alt={`Карточка ${title}`} />
       <h2 className={styles.title}>{title}</h2>
     </Link>

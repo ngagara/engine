@@ -1,15 +1,14 @@
 import React from 'react';
-import SidebarHeader from './parts/SidebarHeader/SidebarHeader';
+import SidebarTabs from './parts/SidebarTabs';
 import { Container } from './../../ui-kit/Container/Container';
 import styles from "./Sidebar.module.scss";
-import SidebarTabs from './parts/SidebarTabs/SidebarTabs';
 
 const Sidebar = ({ name }) => {
     return (
         <div className={styles.sidebar}>
-            <Container className={styles.sidebarHeader}>
-                <SidebarHeader name={name} />
-            </Container>
+            <div className={styles.header}>
+                <h2 className={styles.title}>{name}</h2>
+            </div>
             <Container className={styles.sidebarTabs}>
                 <SidebarTabs />
             </Container>
