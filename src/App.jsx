@@ -11,7 +11,8 @@ const MOCK = [
   {
     id: 1,
     name: "Преступный маг",
-    src: "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    src:
+      "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
   }
 ];
 
@@ -32,7 +33,7 @@ export default function App() {
 
   const handelAddNewBook = () => {
     if (isPapers[isPapers.length - 1].name === "Новая книга") {
-      setDisabledButton(true)
+      setDisabledButton(true);
     } else {
       setPaper((prev) => {
         let prevId = prev[prev.length - 1].id;
@@ -44,7 +45,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/*" element={<AppLayout />}>
+      <Route path="/" element={<AppLayout />}>
         <Route
           index
           element={
@@ -56,12 +57,11 @@ export default function App() {
             />
           }
         />
-        <Route path="books/:id/*" element={<EditPage isPapers={isPapers} />} >
-          {SIDEBAR_MENU && SIDEBAR_MENU.map(route => (
-            <Route key={route.id} path={route.link} element={route.name} />
-          ))}
-          {/* отправлять кудато */}
-          <Route path="*" element={<NotFound />} />
+        <Route path="books/:id/*" element={<EditPage isPapers={isPapers} />}>
+          {SIDEBAR_MENU &&
+            SIDEBAR_MENU.map((route) => (
+              <Route key={route.id} path={route.link} element={route.name} />
+            ))}
         </Route>
         <Route path="*" element={<NotFound />} />
       </Route>

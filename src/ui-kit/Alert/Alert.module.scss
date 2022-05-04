@@ -8,7 +8,7 @@
 
     .text {
         @include text-regular($color: $text_high_accent_light);
-        margin-left: 12px;
+        margin-left: 10px;
 
         &Red {
             color: $red;
