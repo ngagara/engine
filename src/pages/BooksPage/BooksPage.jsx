@@ -1,44 +1,52 @@
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setNewBooks } from '../../store/booksSlice'
 import { Container, Button, Alert } from "../../ui-kit";
 import Paper from "./parts/Paper";
 import styles from "./BooksPage.module.scss";
-import classNames from "classnames";
 
-const BooksPage = ({ ...props }) => {
-  const { handelAddNewBook, isPapers, hiddenButton, disabledButton } = props;
+const BooksPage = () => {
+  const [disabledButton, setDisabledButton] = useState(false);
+  const books = useSelector(state => state.books);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setNewBooks())
+  }, []);
+
+  const handelAddNewBook = () => {
+    if (books[books.length - 1].name === "Новая книга") {
+      setDisabledButton(true);
+    } else {
+      dispatch(setNewBooks())
+    }
+  };
+
   return (
-    <>
-      <section className={styles.page}>
-        <Container p30 className={styles.container}>
-          {hiddenButton && (
-            <Container className={styles.containerButton}>
-              <Button disabled={disabledButton} onClick={handelAddNewBook}>
-                Добавить книгу
-              </Button>
-              {disabledButton && (
-                <Alert
-                  text={"Не задано имя новой книги"}
-                  className={styles.alert}
-                />
-              )}
-            </Container>
+    <section className={styles.page}>
+      <Container p30 className={styles.container}>
+        <Container className={styles.containerButton}>
+          <Button disabled={disabledButton} onClick={handelAddNewBook}>
+            Добавить книгу
+          </Button>
+          {disabledButton && (
+            <Alert text={"Не задано имя новой книги"} className={styles.alert} />
           )}
-          <Container className={styles.containerPaper}>
-            {isPapers &&
-              isPapers.map((paper) => (
-                <Paper
-                  className={classNames(styles.paper, {
-                    [styles.paperHidden]: !hiddenButton
-                  })}
-                  key={paper.id}
-                  src={paper.src}
-                  title={paper.name}
-                  id={paper.id}
-                />
-              ))}
-          </Container>
         </Container>
-      </section>
-    </>
+        <Container className={styles.containerPaper}>
+          {books &&
+            books.map((paper) => (
+              <Paper
+                className={styles.paper}
+                key={paper.id}
+                src={paper.src}
+                title={paper.name}
+                id={paper.id}
+              />
+            ))}
+        </Container>
+      </Container>
+    </section>
   );
 };
 

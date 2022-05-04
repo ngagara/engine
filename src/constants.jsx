@@ -9,7 +9,7 @@ import {
   SettingsIcon
 } from "./img/icons";
 
-import ImagesPage from "../src/pages/EditPage/ImagesSection/ImagesSection";
+import ImagesSection from "../src/pages/EditPage/ImagesSection/ImagesSection";
 import PlotSection from "../src/pages/EditPage/PlotSection/PlotSection";
 import SettingsSection from "../src/pages/EditPage/SettingsSection/SettingsSection";
 import SoundsSection from "../src/pages/EditPage/SoundsSection/SoundsSection";
@@ -86,7 +86,7 @@ export const SIDEBAR_MENU = [
     name: "Изображения",
     icon: <ImageIcon />,
     disabled: false,
-    component: <ImagesPage />
+    component: <ImagesSection />
   },
   {
     id: 3,
