@@ -18,4 +18,7 @@ https://www.figma.com/file/2s5bZoEOQGMRdJonqphJo2/engine?node-id=2%3A3
 // комп роутинг с константами
 // Книга активная страница перенести роуты
 // логи рендеров в комп
-// routing > login > redux > linting
+// разбить стили на файтя в табс
+//alert на странице с паперами при маленьких размерах
+// сохранять логин статус в локал сторадж
+// login > redux > routing > linting

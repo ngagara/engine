@@ -8,7 +8,7 @@ const Tabs = () => {
       {NAV_MENU &&
         NAV_MENU.map((link) => (
           <li key={link.id}>
-            <Tab link={link.link} name={link.name} />
+            <Tab link={link.path} name={link.name} disabled={link.disabled} />
           </li>
         ))}
     </ul>

@@ -12,7 +12,7 @@ import {
 export const NAV_MENU = [
   {
     id: 1,
-    link: "/",
+    path: "books",
     name: "Книги",
     icon: null,
     disabled: false,
@@ -20,7 +20,7 @@ export const NAV_MENU = [
   },
   {
     id: 2,
-    link: "ar",
+    path: "",
     name: "AR",
     icon: null,
     disabled: true,
@@ -28,7 +28,7 @@ export const NAV_MENU = [
   },
   {
     id: 3,
-    link: "users",
+    path: "",
     name: "Пользователи",
     icon: null,
     disabled: true,
@@ -39,7 +39,7 @@ export const NAV_MENU = [
 export const SIDEBAR_MENU = [
   {
     id: 1,
-    link: "plot",
+    path: "plot",
     name: "Сюжет",
     icon: <TreeIcon />,
     disabled: false,
@@ -47,7 +47,7 @@ export const SIDEBAR_MENU = [
   },
   {
     id: 2,
-    link: "images",
+    path: "images",
     name: "Изображения",
     icon: <ImageIcon />,
     disabled: false,
@@ -55,7 +55,7 @@ export const SIDEBAR_MENU = [
   },
   {
     id: 3,
-    link: "sounds",
+    path: "sounds",
     name: "Звуки",
     icon: <SoundIcon />,
     disabled: false,
@@ -63,7 +63,7 @@ export const SIDEBAR_MENU = [
   },
   {
     id: 4,
-    link: "inventory",
+    path: "",
     name: "Инвентарь",
     icon: <InventoryIcon />,
     disabled: true,
@@ -71,7 +71,7 @@ export const SIDEBAR_MENU = [
   },
   {
     id: 5,
-    link: "testing",
+    path: "",
     name: "Тестирование",
     icon: <BugIcon />,
     disabled: true,
@@ -79,7 +79,7 @@ export const SIDEBAR_MENU = [
   },
   {
     id: 6,
-    link: "monetization",
+    path: "",
     name: "Монетизация",
     icon: <MoneyIcon />,
     disabled: true,
@@ -87,7 +87,7 @@ export const SIDEBAR_MENU = [
   },
   {
     id: 7,
-    link: "settings",
+    path: "settings",
     name: "Настройки",
     icon: <SettingsIcon />,
     disabled: false,

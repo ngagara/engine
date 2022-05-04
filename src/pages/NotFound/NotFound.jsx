@@ -1,4 +1,4 @@
-import { Button, Container } from "../ui-kit";
+import { Button, Container } from "../../ui-kit";
 import { useNavigate } from "react-router-dom";
 
 const NotFound = () => {

@@ -9,7 +9,12 @@ const SidebarTabs = () => {
       {SIDEBAR_MENU &&
         SIDEBAR_MENU.map((link) => (
           <li key={link.id}>
-            <SidebarTab link={link.link} icon={link.icon} name={link.name} />
+            <SidebarTab
+              link={link.path}
+              icon={link.icon}
+              name={link.name}
+              disabled={link.disabled}
+            />
           </li>
         ))}
     </ul>

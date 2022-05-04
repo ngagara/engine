@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import BooksPage from "./pages/BooksPage/BooksPage";
 import EditPage from "./pages/EditPage/EditPage";
-import LoginPage from "./pages/LoginPage";
-import NotFound from "./pages/NotFound";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import NotFound from "./pages/NotFound/NotFound";
 import AppLayout from "./pages/AppLayout";
 import { NEW_BOOK, SIDEBAR_MENU } from "./constants";
 
@@ -44,10 +44,11 @@ export default function App() {
 
   return (
     <Routes>
+      <Route path="/" element={<h1>NOLOG</h1>} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/" element={<AppLayout />}>
         <Route
-          index
+          path="books"
           element={
             <BooksPage
               handelAddNewBook={handelAddNewBook}
@@ -60,7 +61,7 @@ export default function App() {
         <Route path="books/:id/*" element={<EditPage isPapers={isPapers} />}>
           {SIDEBAR_MENU &&
             SIDEBAR_MENU.map((route) => (
-              <Route key={route.id} path={route.link} element={route.name} />
+              <Route key={route.id} path={route.path} element={route.name} />
             ))}
         </Route>
         <Route path="*" element={<NotFound />} />

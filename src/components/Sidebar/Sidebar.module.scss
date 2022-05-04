@@ -2,7 +2,7 @@
 @import '../../mixins.scss';
 
 .sidebar {
-    min-height: calc(100vh - 47px);
+    min-height: calc(100vh - 50px);
     overflow: auto;
     min-width: 80px;
     background-color: $bg_second;
@@ -105,5 +105,25 @@
                 fill: $icon_high_accent_light;
             }
         }
+
+        &Disabled {
+            background: $bg_second;
+            color: $text_disabled_light;
+            cursor: unset;
+
+            svg path {
+                fill: $icon_disabled_light;
+            }
+       
+            &:hover {
+             background: $bg_second;
+             color: $text_disabled_light;
+             cursor: unset;
+
+             svg path {
+                fill: $icon_disabled_light;
+            }
+            }
+          }
     }
 }

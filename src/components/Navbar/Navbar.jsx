@@ -6,7 +6,7 @@ import styles from "./Navbar.module.scss";
 export default function Navbar() {
   return (
     <header className={styles.navbar}>
-      <Container>
+      <Container className={styles.navbarContainer}>
         <div className={styles.logoContainer}>
           <LogoIcon />
         </div>
