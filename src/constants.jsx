@@ -9,6 +9,41 @@ import {
   SettingsIcon
 } from "./img/icons";
 
+import ImagesPage from "../src/pages/EditPage/ImagesSection/ImagesSection";
+import PlotSection from "../src/pages/EditPage/PlotSection/PlotSection";
+import SettingsSection from "../src/pages/EditPage/SettingsSection/SettingsSection";
+import SoundsSection from "../src/pages/EditPage/SoundsSection/SoundsSection";
+
+// const routes = [
+//   {
+//       path: 'app',
+//       element: <DashboardLayout />,
+//       children: [
+//           { path: 'account', element: <AccountView /> },
+//           { path: 'search', element: <SearchListView /> },
+//           { path: 'dashboard', element: <DashboardView /> },
+//           { path: 'create', element: <CreateContentView /> },
+//           { path: 'submissions', element: <SubmissionsView /> },
+//           { path: 'inbox', element: <InboxView /> },
+//           { path: 'settings', element: <SettingsView /> },
+//           { path: 'login', element: <LoginView /> },
+//           { path: 'register', element: <RegisterView /> },
+//           { path: '*', element: <NotFoundView /> },
+//           { path: '/', element: <DashboardView /> },
+//       ],
+//   },
+//   {
+//       path: '/',
+//       element: <ContentLayout />,
+//       children: [
+//           { path: '404', element: <NotFoundView /> },
+//           { path: '*', element: <NotFoundView /> },
+//       ],
+//   },
+// ];
+
+// export default routes;
+
 export const NAV_MENU = [
   {
     id: 1,
@@ -43,7 +78,7 @@ export const SIDEBAR_MENU = [
     name: "Сюжет",
     icon: <TreeIcon />,
     disabled: false,
-    component: null
+    component: <PlotSection />
   },
   {
     id: 2,
@@ -51,7 +86,7 @@ export const SIDEBAR_MENU = [
     name: "Изображения",
     icon: <ImageIcon />,
     disabled: false,
-    component: null
+    component: <ImagesPage />
   },
   {
     id: 3,
@@ -59,7 +94,7 @@ export const SIDEBAR_MENU = [
     name: "Звуки",
     icon: <SoundIcon />,
     disabled: false,
-    component: null
+    component: <SoundsSection />
   },
   {
     id: 4,
@@ -91,7 +126,7 @@ export const SIDEBAR_MENU = [
     name: "Настройки",
     icon: <SettingsIcon />,
     disabled: false,
-    component: null
+    component: <SettingsSection />
   }
 ];
 

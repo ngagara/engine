@@ -64,7 +64,11 @@ export default function App() {
               route.path === "" ? (
                 <Route path="*" element={<NotFound />} />
               ) : (
-                <Route key={route.id} path={route.path} element={route.name} />
+                <Route
+                  key={route.id}
+                  path={route.path}
+                  element={route.component}
+                />
               )
             )}
         </Route>
