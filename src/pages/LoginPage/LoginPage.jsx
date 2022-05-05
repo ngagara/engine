@@ -1,12 +1,15 @@
-import { useState } from "react";
-import { Container, Button } from "../../ui-kit";
-import AuthModal from "./AuthModal/AuthModal";
+import { useDispatch } from 'react-redux';
+import { setModalActive } from '../../store/supportSlice'
+import { Container, Button, Modal } from "../../ui-kit";
+import AuthForm from "./AuthForm/AuthForm";
+import styles from "./LoginPage.module.scss";
 
 const LoginPage = () => {
-  const [modalActive, setModalActive] = useState(false);
+
+  const dispatch = useDispatch()
 
   const handelLogin = () => {
-    setModalActive(true);
+    dispatch(setModalActive(true));
   };
 
   return (
@@ -14,10 +17,10 @@ const LoginPage = () => {
       <Container p30>
         <Button onClick={handelLogin}>Войти</Button>
       </Container>
-      <AuthModal
-        modalActive={modalActive}
-        setModalActive={setModalActive}
+      <Modal
+        className={styles.modal}
         title={"Авторизация"}
+        component={<AuthForm />}
       />
     </>
   );

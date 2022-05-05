@@ -17,19 +17,19 @@
     transform: scale(1);
   }
 
-  .root {
+  &Root {
     box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     background: $bg_third_light;
     padding: 30px;
   }
 
-  .title {
+  &Title {
     @include text-subtitle;
     margin-bottom: 10px;
   }
 
-  .subtitle {
+  &Subtitle {
     @include text-regular;
   }
 }

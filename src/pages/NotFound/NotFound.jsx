@@ -1,17 +1,12 @@
-import { Button, Container } from "../../ui-kit";
-import { useNavigate } from "react-router-dom";
+import { Container } from "../../ui-kit";
+import image from "../../img/404.png";
+import styles from "./NotFound.module.scss";
 
 const NotFound = () => {
-  let navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(-1);
-  };
-
   return (
-    <Container>
-      <Button onClick={handleClick}>НАЗАД</Button>
-      <h2>Not Found</h2>
+    <Container className={styles.page}>
+      <img className={styles.pageImage} src={image} alt="Pikachu 404" />
+      <h2 className={styles.pageError}>404</h2>
     </Container>
   );
 };
