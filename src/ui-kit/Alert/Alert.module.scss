@@ -6,13 +6,21 @@
     flex-direction: row;
     align-items: center;
 
-    .text {
-        @include text-regular($color: $text_high_accent_light);
-        margin-left: 10px;
-
-        &Red {
-            color: $red;
-        }
+    &Icon {
+        width: 20px;
+        height: 20px;
     }
 
+    svg path {
+    fill: $red
+    }
+
+    &Text {
+        @include text-small($color: $red);
+        margin-left: 10px;
+
+        &Normal {
+            @include text-regular($color: $text_high_accent_light);
+        }
+    }
 }

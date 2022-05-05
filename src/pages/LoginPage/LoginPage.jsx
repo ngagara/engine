@@ -1,19 +1,25 @@
+import { useState } from "react";
 import { Container, Button } from "../../ui-kit";
-import { useNavigate } from "react-router-dom";
+import AuthModal from "./AuthModal/AuthModal";
 
 const LoginPage = () => {
-  let navigate = useNavigate();
+  const [modalActive, setModalActive] = useState(false);
 
   const handelLogin = () => {
-    navigate("/books");
+    setModalActive(true);
   };
 
   return (
-    <div>
+    <>
       <Container p30>
-        <Button onClick={handelLogin}>Вход</Button>
+        <Button onClick={handelLogin}>Войти</Button>
       </Container>
-    </div>
+      <AuthModal
+        modalActive={modalActive}
+        setModalActive={setModalActive}
+        title={"Авторизация"}
+      />
+    </>
   );
 };
 

@@ -8,11 +8,11 @@ import Sidebar from './../../components/Sidebar/Sidebar';
 const EditPage = () => {
   const [isBook, setBook] = useState({});
   const { id } = useParams();
-  const books = useSelector(state => state.books);
+  const books = useSelector(state => state.books.books);
 
   useEffect(() => {
-    books.forEach(paper => {
-      if (books.id === Number(id)) setBook(paper)
+    books.forEach(book => {
+      if (book.id === Number(id)) setBook(book)
     })
   }, [id])
 
@@ -20,7 +20,7 @@ const EditPage = () => {
     <section className={styles.page}>
       <Sidebar name={isBook.name} />
       <Container>
-        <Outlet/>
+        <Outlet />
       </Container>
     </section >
   );

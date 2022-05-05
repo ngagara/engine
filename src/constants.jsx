@@ -1,4 +1,3 @@
-import plug from "./img/plug.png";
 import {
   TreeIcon,
   ImageIcon,
@@ -129,9 +128,3 @@ export const SIDEBAR_MENU = [
     component: <SettingsSection />
   }
 ];
-
-export const NEW_BOOK = {
-  id: 1,
-  name: "Новая книга",
-  src: plug
-};

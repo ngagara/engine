@@ -1,0 +1,50 @@
+@import '../../_variables.scss';
+@import '../../_mixins.scss';
+
+
+.root {
+  display: flex;
+  flex-direction: column;
+  @include text-regular;
+
+  label {
+   @include text-small($color: $text_low_accent);
+   margin-bottom: 2px;
+  }
+
+  .input {
+    background: $bg_third_light;
+    border: 2px solid $el_accent_high;
+    @include text-regular($color: $text_high_accent);
+    border-radius: 4px;
+    height: 33px;
+    padding: 8px 10px;
+
+    &:focus {
+      border: 2px solid $el_accent_low;
+      outline: none;
+    }
+
+    &:invalid {
+      border: 2px solid $red;
+    }
+
+    &:hover:invalid {
+      border: 2px solid $red_hover;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    &:hover {
+      border: 2px solid $el_accent_low;
+    }
+
+    &:disabled {
+      border: 2px solid $el_accent_disabled;
+    }
+
+  }
+}
+

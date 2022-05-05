@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setNewBooks } from '../../store/booksSlice'
+import { setNewBook, addNewBook } from '../../store/booksSlice'
 import { Container, Button, Alert } from "../../ui-kit";
 import Paper from "./parts/Paper";
 import styles from "./BooksPage.module.scss";
 
 const BooksPage = () => {
   const [disabledButton, setDisabledButton] = useState(false);
-  const books = useSelector(state => state.books);
+  const books = useSelector(state => state.books.books);
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(setNewBooks())
+    dispatch(setNewBook())
   }, []);
 
   const handelAddNewBook = () => {
     if (books[books.length - 1].name === "Новая книга") {
       setDisabledButton(true);
     } else {
-      dispatch(setNewBooks())
+      dispatch(addNewBook())
     }
   };
 
@@ -30,7 +30,7 @@ const BooksPage = () => {
             Добавить книгу
           </Button>
           {disabledButton && (
-            <Alert text={"Не задано имя новой книги"} className={styles.alert} />
+            <Alert text={"Не задано имя новой книги"} className={styles.alert} normalText={true} />
           )}
         </Container>
         <Container className={styles.containerPaper}>
