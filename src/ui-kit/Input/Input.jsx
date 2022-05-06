@@ -1,16 +1,28 @@
 import classNames from "classnames";
 import styles from "./Input.module.scss";
 
-export const Input = ({ label, type, disabled, className }) => {
+export const Input = ({ ...props }) => {
+  const {
+    name,
+    label,
+    type,
+    disabled,
+    className,
+    register,
+    required,
+    error
+  } = props;
+
   return (
     <div className={classNames(styles.root, { [className]: className })}>
-      <label htmlFor={label}>{label && label}</label>
+      {label && <label htmlFor={label}>{label}</label>}
       <input
         id={label}
         type={type}
         className={styles.input}
         placeholder={"-"}
-        // pattern="[А-ЯЁ][а-яё]+(-[А-ЯЁ][а-яё]+)?"
+        required={error}
+        {...register(name, { required })}
         disabled={disabled}
       />
     </div>

@@ -1,10 +1,11 @@
 import styles from "./Button.module.scss";
 import classNames from "classnames";
 
-export const Button = ({ children, disabled, bgWhite, onClick, className }) => {
+export const Button = ({ ...props }) => {
+  const { children, disabled, type, bgWhite, onClick, className } = props;
   return (
     <button
-      type="button"
+      type={type}
       className={classNames(
         styles.btn,
         { [styles.btnWhite]: bgWhite },
