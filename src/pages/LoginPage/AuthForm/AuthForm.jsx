@@ -6,37 +6,41 @@ import { Button, Input, Alert } from "../../../ui-kit";
 import styles from "./AuthForm.module.scss";
 
 const AuthForm = () => {
-  let navigate = useNavigate();
-  const dispatch = useDispatch();
-  const login = useSelector((state) => state.auth.login);
-
   const {
     register,
-    reset,
     handleSubmit,
+    setError,
     formState: { errors }
   } = useForm();
 
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const password = useSelector((state) => state.auth.password);
+  const required = errors.password && errors.password.type === "required"
+
+  // временное решение пока нет нормально авторизации
   const pushBooksPage = (data) => {
-    dispatch(setLogin(data.password));
-    reset();
-    if (login) navigate("/books");
-  };
+    if (data.password !== password) {
+      setError("password")
+    } else {
+      dispatch(setLogin());
+      navigate("/books")
+    };
+  }
 
   return (
     <form className={styles.auth} onSubmit={handleSubmit(pushBooksPage)}>
       <Input
-        register={register}
         className={styles.authInput}
+        register={{ ...register("password", { required: true }) }}
         label={"Пароль"}
         type={"password"}
         name={"password"}
-        required={"Проверьте правильность введенных данных"}
-        error={errors.password}
+        required={required}
+        invalid={errors.password}
       />
-      <div className={styles.authAlert}>
-        {errors?.password && <Alert text={errors?.password?.message} />}
-      </div>
+      {required && <Alert text={'Это обязательное поле'} />}
+      {!required && errors.password && <Alert text={'Проверьте правильность введенных данных'} />}
       <Button type={"submit"} className={styles.authButton}>
         Войти
       </Button>

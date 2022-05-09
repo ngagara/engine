@@ -8,6 +8,11 @@
     background-color: $bg_second;
     cursor: pointer;
     transition: all .4s ease;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 90;
 
     &:hover {
       min-width: 300px;

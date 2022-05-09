@@ -7,8 +7,8 @@ const supportSlice = createSlice({
     password: "123123"
   },
   reducers: {
-    setLogin(state, action) {
-      if (state.password === action.payload) state.login = true;
+    setLogin(state) {
+      state.login = true;
     }
   }
 });

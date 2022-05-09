@@ -3,27 +3,27 @@ import styles from "./Input.module.scss";
 
 export const Input = ({ ...props }) => {
   const {
-    name,
     label,
     type,
     disabled,
     className,
     register,
+    name,
     required,
-    error
+    invalid
   } = props;
 
   return (
     <div className={classNames(styles.root, { [className]: className })}>
       {label && <label htmlFor={label}>{label}</label>}
       <input
-        id={label}
+        id={name}
         type={type}
-        className={styles.input}
+        className={classNames(styles.input, {[styles.inputInvalid]: invalid})}
         placeholder={"-"}
-        required={error}
-        {...register(name, { required })}
         disabled={disabled}
+        required={required}
+        {...register}
       />
     </div>
   );

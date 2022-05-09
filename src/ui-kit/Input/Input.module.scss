@@ -8,8 +8,8 @@
   @include text-regular;
 
   label {
-   @include text-small($color: $text_low_accent);
-   margin-bottom: 2px;
+    @include text-small($color: $text_low_accent);
+    margin-bottom: 2px;
   }
 
   .input {
@@ -19,6 +19,7 @@
     border-radius: 4px;
     height: 33px;
     padding: 8px 10px;
+    cursor: pointer;
 
     &:focus {
       border: 2px solid $el_accent_low;
@@ -45,6 +46,13 @@
       border: 2px solid $el_accent_disabled;
     }
 
+    &Invalid {
+      border: 2px solid $red;
+
+      &:hover {
+        border: 2px solid $red_hover;
+      }
+    }
+
   }
 }
-
