@@ -13,20 +13,20 @@ const AuthForm = () => {
     formState: { errors }
   } = useForm();
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const password = useSelector((state) => state.auth.password);
-  const required = errors.password && errors.password.type === "required"
+  const required = errors.password && errors.password.type === "required";
 
   // временное решение пока нет нормально авторизации
   const pushBooksPage = (data) => {
     if (data.password !== password) {
-      setError("password")
+      setError("password");
     } else {
       dispatch(setLogin());
-      navigate("/books")
+      navigate("/books", { replace: true });
     };
-  }
+  };
 
   return (
     <form className={styles.auth} onSubmit={handleSubmit(pushBooksPage)}>
@@ -39,8 +39,8 @@ const AuthForm = () => {
         required={required}
         invalid={errors.password}
       />
-      {required && <Alert text={'Это обязательное поле'} />}
-      {!required && errors.password && <Alert text={'Проверьте правильность введенных данных'} />}
+      {/* {required && <Alert text={'Это обязательное поле'} />} */}
+      {!required && errors.password && <Alert className={styles.authAlert} smallText={true} text={"Проверьте правильность введенных данных"} />}
       <Button type={"submit"} className={styles.authButton}>
         Войти
       </Button>

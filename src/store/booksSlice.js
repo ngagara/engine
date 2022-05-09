@@ -6,6 +6,7 @@ import plug from "../img/plug.png";
 const booksSlice = createSlice({
   name: "books",
   initialState: {
+    // вынести в константу
     new_book: {
       id: 1,
       name: "Новая книга",
@@ -19,14 +20,14 @@ const booksSlice = createSlice({
   },
   reducers: {
     setNewBook(state) {
-      if (state.books.length === 0) state.books.push(state.new_book)
+      if (state.books.length === 0) state.books.push(state.new_book);
     },
     addNewBook(state) {
       let prevId = state.books[state.books.length - 1].id;
       state.books.push({
         ...state.new_book,
         id: (prevId += 1)
-      })
+      });
     }
   }
 });

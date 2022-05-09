@@ -1,11 +1,11 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { setModalActive } from '../../store/supportSlice'
+import { useSelector, useDispatch } from "react-redux";
+import { setModalActive } from "../../store/supportSlice";
 import classNames from "classnames";
 import styles from "./Modal.module.scss";
 
 export const Modal = ({ ...props }) => {
-  const dispatch = useDispatch()
-  const active = useSelector(state => state.support.modalActive)
+  const dispatch = useDispatch();
+  const active = useSelector(state => state.support.modalActive);
 
   const { children, component, subtitle, title, className } = props;
   return (

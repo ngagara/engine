@@ -1,12 +1,12 @@
-import { useDispatch } from 'react-redux';
-import { setModalActive } from '../../store/supportSlice'
+import { useDispatch } from "react-redux";
+import { setModalActive } from "../../store/supportSlice";
 import { Container, Button, Modal } from "../../ui-kit";
 import AuthForm from "./AuthForm/AuthForm";
 import styles from "./LoginPage.module.scss";
 
-const LoginPage = () => {
+export const LoginPage = () => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handelLogin = () => {
     dispatch(setModalActive(true));
@@ -26,4 +26,3 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;

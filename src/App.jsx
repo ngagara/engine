@@ -1,11 +1,6 @@
-import { Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import AppLayout from "./pages/AppLayout";
-import BooksPage from "./pages/BooksPage/BooksPage";
-import EditPage from "./pages/EditPage/EditPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import NotFound from "./pages/NotFound/NotFound";
-import ProtectedRoute from "./hoc/ProtectedRoute";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { AppLayout, BooksPage, EditPage, LoginPage, NotFound, ProtectedRoute } from "./pages";
 import { SIDEBAR_MENU } from "./constants";
 
 export default function App() {
@@ -15,7 +10,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
-      <Route element={<ProtectedRoute isLogin={login} />}>
+      <Route element={<ProtectedRoute isLogin={true} />}>
         <Route element={<AppLayout />}>
           <Route path="books" element={<BooksPage />} />
           <Route path="books/:id/*" element={<EditPage />}>
