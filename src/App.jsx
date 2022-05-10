@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AppLayout, BooksPage, EditPage, LoginPage, NotFound, ProtectedRoute } from "./pages";
-import { SIDEBAR_MENU } from "./constants";
+import { SIDEBAR_MENU } from "./routs";
 
 export default function App() {
 

@@ -1,6 +1,6 @@
 import Tab from "./Tab";
 import styles from "./Tabs.module.scss";
-import { NAV_MENU } from "../../../constants";
+import { NAV_MENU } from "../../../routs";
 
 const Tabs = () => {
   return (

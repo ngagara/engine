@@ -1,7 +1,7 @@
 import React from "react";
 import SidebarTab from "./SidebarTab";
 import styles from "../Sidebar.module.scss";
-import { SIDEBAR_MENU } from "../../../constants";
+import { SIDEBAR_MENU } from "../../../routs";
 
 const SidebarTabs = () => {
   return (

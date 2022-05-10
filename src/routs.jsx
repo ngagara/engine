@@ -1,3 +1,8 @@
+import ImagesSection from "./pages/EditPage/sections/ImagesSection/ImagesSection";
+import PlotSection from "./pages/EditPage/sections/PlotSection/PlotSection";
+import SettingsSection from "./pages/EditPage/sections/SettingsSection/SettingsSection";
+import SoundsSection from "./pages/EditPage/sections/SoundsSection/SoundsSection";
+
 import {
   TreeIcon,
   ImageIcon,
@@ -7,22 +12,6 @@ import {
   MoneyIcon,
   SettingsIcon
 } from "./img/icons";
-
-import ImagesSection from "../src/pages/EditPage/ImagesSection/ImagesSection";
-import PlotSection from "../src/pages/EditPage/PlotSection/PlotSection";
-import SettingsSection from "../src/pages/EditPage/SettingsSection/SettingsSection";
-import SoundsSection from "../src/pages/EditPage/SoundsSection/SoundsSection";
-
-// const routes = [
-//   {
-//     path: '/',
-//     children: [
-//       { path: '/', element: <LoginPage /> },
-//       { path: '', element: <ProtectedRoute /> },
-//       { path: 'books/:id', element: <EditPage /> },
-//     ],
-//   },
-// ];
 
 export const NAV_MENU = [
   {
