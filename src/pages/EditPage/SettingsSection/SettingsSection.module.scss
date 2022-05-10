@@ -9,14 +9,6 @@
   background: $bg_third_light;
   margin-left: 80px;
 
-  .header {
-    background: #F4F4F4;
-  }
-
-  .container {
-    padding: 17px 30px 16px 30px;
-  }
-
   .title {
     @include text-regular
   }

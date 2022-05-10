@@ -1,15 +1,12 @@
-import { Container } from './../../../ui-kit/Container/Container';
+import { SectionContainer } from "../parts/SectionContainer/SectionContainer";
 import styles from "./SoundsSection.module.scss";
 
 const SoundsSection = () => {
   return (
     <div className={styles.section}>
-      <div className={styles.header}>
-        <Container className={styles.container}>
-          <p className={styles.title}>Звуки</p>
-        </Container>
-      </div>
-      
+      <SectionContainer>
+        <p className={styles.title}>Звуки</p>
+      </SectionContainer>
     </div>
   );
 };
