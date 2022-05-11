@@ -7,7 +7,7 @@ import styles from "./BooksPage.module.scss";
 
 export const BooksPage = () => {
   const [disabledButton, setDisabledButton] = useState(false);
-  const books = useSelector(state => state.books.books);
+  const books = useSelector((state) => state.books.books);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,7 +30,10 @@ export const BooksPage = () => {
             Добавить книгу
           </Button>
           {disabledButton && (
-            <Alert text={"Не задано имя новой книги"} className={styles.alert} />
+            <Alert
+              text={"Не задано имя новой книги"}
+              className={styles.alert}
+            />
           )}
         </Container>
         <Container className={styles.containerPaper}>
@@ -49,4 +52,3 @@ export const BooksPage = () => {
     </section>
   );
 };
-

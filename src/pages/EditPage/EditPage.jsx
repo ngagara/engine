@@ -1,28 +1,26 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setEditBook } from "../../store/booksSlice";
 import { Outlet, useParams } from "react-router-dom";
 import { Container } from "../../ui-kit";
 import styles from "./EditPage.module.scss";
 import Sidebar from "./../../components/Sidebar/Sidebar";
 
 export const EditPage = () => {
-  const [isBook, setBook] = useState({});
   const { id } = useParams();
-  const books = useSelector(state => state.books.books);
+  const dispatch = useDispatch();
+  const book = useSelector((state) => state.books.edit_book);
 
   useEffect(() => {
-    books.forEach(book => {
-      if (book.id === Number(id)) setBook(book);
-    });
-  }, [id]);
+    dispatch(setEditBook(Number(id)));
+  }, []);
 
   return (
     <section className={styles.page}>
-      <Sidebar name={isBook.name} />
+      <Sidebar name={book.name} />
       <Container>
         <Outlet />
       </Container>
-    </section >
+    </section>
   );
 };
-

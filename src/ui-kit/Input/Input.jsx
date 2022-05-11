@@ -10,7 +10,8 @@ export const Input = ({ ...props }) => {
     register,
     name,
     required,
-    invalid
+    invalid,
+    placeholder
   } = props;
 
   return (
@@ -19,8 +20,8 @@ export const Input = ({ ...props }) => {
       <input
         id={name}
         type={type}
-        className={classNames(styles.input, {[styles.inputInvalid]: invalid})}
-        placeholder={"-"}
+        className={classNames(styles.input, { [styles.inputInvalid]: invalid })}
+        placeholder={placeholder ? placeholder : "-"}
         disabled={disabled}
         required={required}
         {...register}

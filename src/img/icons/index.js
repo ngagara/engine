@@ -8,5 +8,4 @@ export { MoneyIcon } from "./MoneyIcon";
 export { SettingsIcon } from "./SettingsIcon";
 export { BugIcon } from "./BugIcon";
 export { ImageIcon } from "./ImageIcon";
-
-
+export { TrashIcon } from "./TrashIcon";
