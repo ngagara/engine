@@ -1,19 +1,18 @@
-import { useSelector, useDispatch } from "react-redux";
-import { setModalActive } from "../../store/supportSlice";
+import { useDispatch } from "react-redux";
+import { toggleModal } from "../../store/supportSlice";
 import classNames from "classnames";
 import styles from "./Modal.module.scss";
 
 export const Modal = ({ ...props }) => {
   const dispatch = useDispatch();
-  const active = useSelector(state => state.support.modalActive);
 
-  const { children, component, subtitle, title, className, id } = props;
+  const { children, component, subtitle, title, className, active, id } = props;
   return (
-    <div id={id && id}
+    <div
       className={classNames(styles.modal, {
         [styles.modalActive]: active
       })}
-      onMouseDown={() => dispatch(setModalActive(false))}
+      onMouseDown={() => dispatch(toggleModal(id))}
     >
       <div
         className={classNames(styles.modalRoot, { [className]: className })}

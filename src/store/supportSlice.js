@@ -5,16 +5,20 @@ import {
 const supportSlice = createSlice({
   name: "support",
   initialState: {
-    modalActive: false
+    modals: {
+      delete_image: false,
+      delete_book: false,
+      login: false
+    }
   },
   reducers: {
-    setModalActive(state, action) {
-      state.modalActive = action.payload.active;
+    toggleModal(state, action) {
+      state.modals[action.payload] = !state.modals[action.payload];
     },
   }
 });
 
 export const {
-  setModalActive,
+  toggleModal
 } = supportSlice.actions;
 export default supportSlice.reducer;

@@ -1,17 +1,14 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Input, Button, Alert, Modal } from "../../../../ui-kit";
-import { setModalActive } from "../../../../store/supportSlice";
+import { toggleModal } from "../../../../store/supportSlice";
 import { TrashIcon } from "../../../../img/icons";
 import { SectionContainer } from "../parts/SectionContainer/SectionContainer";
 import styles from "./SettingsSection.module.scss";
 
 const SettingsSection = () => {
   const book = useSelector((state) => state.books.edit_book);
+  const { delete_book, delete_image } = useSelector((state) => state.support.modals);
   const dispatch = useDispatch();
-
-  const handelOpenModal = (id) => {
-    dispatch(setModalActive({ active: true, id }));
-  };
 
   return (
     <div className={styles.section}>
@@ -31,7 +28,7 @@ const SettingsSection = () => {
             type={"file"}
             className={styles.sectionInput}
           />
-          <div className={styles.sectionIcon} onClick={handelOpenModal('delete_image')}>
+          <div className={styles.sectionIcon} onClick={() => dispatch(toggleModal('delete_image'))}>
             <TrashIcon />
           </div>
         </div>
@@ -42,15 +39,12 @@ const SettingsSection = () => {
           </a>
         </div>
         <div className={styles.sectionButtons}>
-          <Button bgWhite disabled>
-            Выгрузить
-          </Button>
-          <Button bgWhite onClick={handelOpenModal('delete_book')}>Удалить</Button>
+          <Button bgWhite onClick={() => dispatch(toggleModal('delete_book'))}>Удалить</Button>
           <Button bgWhite>Сохранить</Button>
         </div>
       </Container>
-      <Modal title={"Удалить обложку?"} />
-      <Modal title={"Удалить книгу?"} />
+      <Modal title={"Удалить обложку?"} active={delete_image} id={'delete_image'} />
+      <Modal title={"Удалить книгу?"} active={delete_book} id={'delete_book'} />
     </div>
   );
 };
