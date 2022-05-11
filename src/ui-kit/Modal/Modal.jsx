@@ -7,9 +7,9 @@ export const Modal = ({ ...props }) => {
   const dispatch = useDispatch();
   const active = useSelector(state => state.support.modalActive);
 
-  const { children, component, subtitle, title, className } = props;
+  const { children, component, subtitle, title, className, id } = props;
   return (
-    <div
+    <div id={id && id}
       className={classNames(styles.modal, {
         [styles.modalActive]: active
       })}

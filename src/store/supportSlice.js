@@ -9,7 +9,7 @@ const supportSlice = createSlice({
   },
   reducers: {
     setModalActive(state, action) {
-      state.modalActive = action.payload;
+      state.modalActive = action.payload.active;
     },
   }
 });
