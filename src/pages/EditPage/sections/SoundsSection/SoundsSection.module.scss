@@ -8,9 +8,17 @@
   background: $bg_third_light;
   margin-left: 80px;
 
+  &AlertContainer {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 100px);
+  }
+
   &Alert {
     @include text-regular($color: $text_low_accent);
-    width: 163px;
+    width: 110px;
     height: 34px;
     text-align: center;
   }

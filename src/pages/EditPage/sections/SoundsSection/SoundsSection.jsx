@@ -9,7 +9,7 @@ const SoundsSection = () => {
         <p className={styles.title}>Звуки</p>
       </SectionContainer>
       {/* тут будет реальная проверка на наличие изображений  */}
-      <Container>
+      <Container className={styles.sectionAlertContainer}>
         <p className={styles.sectionAlert}>Не загружено ни одного звука</p>
       </Container>
     </div>
