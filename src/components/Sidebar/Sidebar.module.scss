@@ -6,6 +6,7 @@
     overflow: auto;
     min-width: 80px;
     background-color: $bg_second;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     transition: all .4s ease;
     position: absolute;

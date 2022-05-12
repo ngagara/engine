@@ -22,6 +22,7 @@ export const Input = ({ ...props }) => {
         type={type}
         className={classNames(styles.input, { [styles.inputInvalid]: invalid })}
         placeholder={placeholder ? placeholder : "-"}
+        data-text={"-"}
         disabled={disabled}
         required={required}
         {...register}
@@ -29,3 +30,5 @@ export const Input = ({ ...props }) => {
     </div>
   );
 };
+
+// https://codepen.io/adamlaki/pen/VYpewx

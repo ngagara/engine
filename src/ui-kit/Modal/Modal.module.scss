@@ -19,6 +19,8 @@
   }
 
   &Root {
+    display: flex;
+    flex-direction: column;
     box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     background: $bg_third_light;
