@@ -14,28 +14,15 @@ export const ImagesSection = () => {
       <SectionContainer>
         <p className={styles.sectionTitle}>Изображения</p>
       </SectionContainer>
+      {/* тут будет реальная проверка на наличие изображений  */}
+      {/* <Container>
+        <p className={styles.sectionAlert}>
+          Не загружено ни одного изображения
+        </p>
+      </Container> */}
       <Container className={styles.sectionGrid}>
         <div className={styles.sectionItem}>
           <Link text={"Параграф #1"} />
-          <img
-            src={
-              "https://images.unsplash.com/photo-1601615358719-0280e06c9786?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-            }
-            alt={"book.name"}
-            className={styles.sectionItemImage}
-          />
-          <div className={styles.sectionInputRoot}>
-            <Input type={"file"} className={styles.sectionInputRootInput} />
-            <div
-              className={styles.sectionInputRootIcon}
-              onClick={() => dispatch(toggleModal("delete_image"))}
-            >
-              <TrashIcon />
-            </div>
-          </div>
-        </div>
-        <div className={styles.sectionItem}>
-          <Link text={"Параграф #2"} />
           <img
             src={
               "https://images.unsplash.com/photo-1601615358719-0280e06c9786?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
