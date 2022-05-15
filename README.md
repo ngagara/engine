@@ -18,5 +18,6 @@ https://www.figma.com/file/2s5bZoEOQGMRdJonqphJo2/engine?node-id=2%3A3
 // redux > reduxquery > reduxthunk
 // доверстать 404
 // разбить сеттингс и имаджес на комп
-// сделать фикс ширину и высоту
 // сайд бар уходит по потере фокуса
+// ограничить контейнер картинок
+// firebase auth 

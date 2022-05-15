@@ -2,8 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { SectionContainer } from "../parts/SectionContainer/SectionContainer";
 import { toggleModal } from "../../../../store/supportSlice";
 import { Container, Input, Button, Modal, Link } from "../../../../ui-kit";
-import styles from "./ImagesSection.module.scss";
 import { TrashIcon } from "../../../../img/icons";
+import styles from "./ImagesSection.module.scss";
 
 export const ImagesSection = () => {
   const { delete_image } = useSelector((state) => state.support.modals);
@@ -15,11 +15,6 @@ export const ImagesSection = () => {
         <p className={styles.sectionTitle}>Изображения</p>
       </SectionContainer>
       {/* тут будет реальная проверка на наличие изображений  */}
-      {/* <Container>
-        <p className={styles.sectionAlert}>
-          Не загружено ни одного изображения
-        </p>
-      </Container> */}
       <Container className={styles.sectionGrid}>
         <div className={styles.sectionItem}>
           <Link text={"Параграф #1"} />

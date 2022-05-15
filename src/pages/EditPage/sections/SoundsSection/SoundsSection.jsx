@@ -1,6 +1,7 @@
-import { Container, Input, Button, Modal, Link } from "../../../../ui-kit";
+// import { Container, Input, Button, Modal, Link } from "../../../../ui-kit";
 import { SectionContainer } from "../parts/SectionContainer/SectionContainer";
 import styles from "./SoundsSection.module.scss";
+import Plug from "../parts/Plug/Plug";
 
 const SoundsSection = () => {
   return (
@@ -9,9 +10,7 @@ const SoundsSection = () => {
         <p className={styles.title}>Звуки</p>
       </SectionContainer>
       {/* тут будет реальная проверка на наличие изображений  */}
-      <Container className={styles.sectionAlertContainer}>
-        <p className={styles.sectionAlert}>Не загружено ни одного звука</p>
-      </Container>
+      <Plug title={'Не загружено ни одного звука'}/>
     </div>
   );
 };
