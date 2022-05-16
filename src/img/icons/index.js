@@ -9,3 +9,4 @@ export { SettingsIcon } from "./SettingsIcon";
 export { BugIcon } from "./BugIcon";
 export { ImageIcon } from "./ImageIcon";
 export { TrashIcon } from "./TrashIcon";
+export { PlusIcon } from "./PlusIcon";
