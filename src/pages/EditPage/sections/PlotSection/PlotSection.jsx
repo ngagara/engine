@@ -5,10 +5,8 @@ import ParagraphDetails from './parts/ParagraphDetails/ParagraphDetails';
 
 const PlotSection = () => {
   return <div className={styles.section}>
-    <Container>
-      <Paragraphs />
-      <ParagraphDetails />
-    </Container>
+    <Paragraphs />
+    <ParagraphDetails />
   </div>;
 };
 

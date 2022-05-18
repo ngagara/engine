@@ -1,4 +1,4 @@
-export const UnderlinedIcon = () => {
+export const ItalicIcon = () => {
   return (
     <svg
       width="20"

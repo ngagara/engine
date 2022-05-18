@@ -1,51 +1,67 @@
 @import '../../../../../../../_variables.scss';
 @import '../../../../../../../mixins.scss';
 
-.header{
+.header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 1px;
+  justify-content: flex-start;
+  border-bottom: 2px solid $bg_third_light;
 
-  &ArrowL{
-    display: flex;
-    align-items: center;
+  &ArrowL {
     width: 20px;
     height: 20px;
     margin-right: 10px;
     cursor: pointer;
+
     svg path {
-        fill: $icon_high_accent;
+      fill: $icon_high_accent;
     }
   }
-  
+
   &Paragraph {
+    display: flex;
+    align-items: center;
     padding: 16px 20px 17px 20px;
-  
+
     &Number {
-        color: $text_low_accent;
-        margin-right: 10px;
+      color: $text_low_accent;
+      margin-right: 10px;
     }
-  
+
     &Name {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        margin-right: 10px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      margin-right: 10px;
+      max-width: 320px;
     }
+
+    &Icons {
+      display: flex;
+      margin-left: auto;
+    }
+
+    &Save {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      cursor: pointer;
   
+      svg path {
+        fill: $icon_high_accent;
+      }
+    }
+
     &Remove {
-        display: flex;
-        align-items: center;
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-        margin-left: auto;
-  
-        svg path {
-            fill: $icon_high_accent;
-        }
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+
+      svg path {
+        fill: $icon_high_accent;
+      }
     }
   }
 }

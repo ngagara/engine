@@ -3,7 +3,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import {
   BoldIcon,
   ItalicIcon,
-  UnderlineIcon
+  UnderlinedIcon,
+  StrikethroughIcon
 } from "../../../../../../../img/icons";
 import { Dropdown, Textarea } from "../../../../../../../ui-kit";
 import FilesLoader from "../../../../parts/LoaderFiles/LoaderFiles";
@@ -49,6 +50,20 @@ const ParagraphDetailsRules = () => {
           />
         </Dropdown>
         <Dropdown title={"Текст "}>
+          <div className={styles.formatting}>
+            <div className={styles.formattingIcon}>
+              <BoldIcon />
+            </div>
+            <div className={styles.formattingIcon}>
+              <ItalicIcon />
+            </div>
+            <div className={styles.formattingIcon}>
+              <UnderlinedIcon />
+            </div>
+            <div className={styles.formattingIcon}>
+              <StrikethroughIcon />
+            </div>
+          </div>
           <Textarea />
         </Dropdown>
         <Dropdown title={"Звук"}>
@@ -74,16 +89,19 @@ const ParagraphDetailsRules = () => {
             typeModal={"delete_image"}
           />
         </Dropdown>
-        <Dropdown title={"Текст "}>
-          <div className={styles.icons}>
-            <div className={styles.icon}>
+        <Dropdown title={"Текст"}>
+          <div className={styles.formatting}>
+            <div className={styles.formattingIcon}>
               <BoldIcon />
             </div>
-            <div className={styles.icon}>
+            <div className={styles.formattingIcon}>
               <ItalicIcon />
             </div>
-            <div className={styles.icon}>
-              <UnderlineIcon />
+            <div className={styles.formattingIcon}>
+              <UnderlinedIcon />
+            </div>
+            <div className={styles.formattingIcon}>
+              <StrikethroughIcon />
             </div>
           </div>
           <Textarea />

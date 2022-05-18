@@ -1,5 +1,5 @@
 import { SectionContainer } from "../../../../parts/SectionContainer/SectionContainer";
-import { TrashIcon, ArrowLeftIcon } from "../../../../../../../img/icons";
+import { TrashIcon, ArrowLeftIcon, SaveIcon } from "../../../../../../../img/icons";
 import styles from "./ParagraphDetailsHeader.module.scss";
 
 const ParagraphDetailsHeader = () => {
@@ -12,8 +12,13 @@ const ParagraphDetailsHeader = () => {
       <p
         className={styles.headerParagraphName}
       >{`${"Параграф"} ${"#"} ${1}`}</p>
-      <div className={styles.headerParagraphRemove}>
-        <TrashIcon />
+      <div className={styles.headerParagraphIcons}>
+        <div className={styles.headerParagraphSave}>
+          <SaveIcon />
+        </div>
+        <div className={styles.headerParagraphRemove}>
+          <TrashIcon />
+        </div>
       </div>
     </SectionContainer>
   );

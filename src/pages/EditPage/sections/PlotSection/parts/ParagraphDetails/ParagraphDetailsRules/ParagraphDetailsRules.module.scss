@@ -12,7 +12,7 @@
         list-style-type: none;
         cursor: pointer;
         padding: 15px 10px 12px 10px;
-        
+
         &Active {
             outline: none;
             border-bottom: 2px solid $el_accent_high;
@@ -27,6 +27,30 @@
     margin-bottom: 10px;
 }
 
-.icons {
-    
+.formatting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+
+    &Icon {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 5px;
+        border-radius: 2px;
+
+        &:hover {
+            background-color: $el_bg_first;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        svg path {
+            fill: $icon_high_accent;
+        }
+    }
+
 }
