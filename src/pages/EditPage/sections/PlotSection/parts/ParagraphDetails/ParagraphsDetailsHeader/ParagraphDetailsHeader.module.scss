@@ -1,0 +1,51 @@
+@import '../../../../../../../_variables.scss';
+@import '../../../../../../../mixins.scss';
+
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1px;
+
+  &ArrowL{
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    svg path {
+        fill: $icon_high_accent;
+    }
+  }
+  
+  &Paragraph {
+    padding: 16px 20px 17px 20px;
+  
+    &Number {
+        color: $text_low_accent;
+        margin-right: 10px;
+    }
+  
+    &Name {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        margin-right: 10px;
+    }
+  
+    &Remove {
+        display: flex;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin-left: auto;
+  
+        svg path {
+            fill: $icon_high_accent;
+        }
+    }
+  }
+}

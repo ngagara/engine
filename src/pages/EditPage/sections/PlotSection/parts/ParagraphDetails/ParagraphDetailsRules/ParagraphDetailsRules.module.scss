@@ -1,0 +1,32 @@
+@import '../../../../../../../_variables.scss';
+@import '../../../../../../../mixins.scss';
+
+.tabs {
+    &List {
+        display: flex;
+        padding: 0 20px;
+        @include text-regular;
+    }
+
+    &Link {
+        list-style-type: none;
+        cursor: pointer;
+        padding: 15px 10px 12px 10px;
+        
+        &Active {
+            outline: none;
+            border-bottom: 2px solid $el_accent_high;
+        }
+    }
+}
+
+.image {
+    width: 300px;
+    height: 225px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.icons {
+    
+}

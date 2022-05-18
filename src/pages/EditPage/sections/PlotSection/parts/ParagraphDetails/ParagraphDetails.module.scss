@@ -7,62 +7,24 @@
     @include text-regular;
     min-width: 500px;
     min-height: calc(100vh - 50px);
-    overflow: auto;
-
-    &Container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 1px;
-    }
-    &ArrowL{
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        cursor: pointer;
-        svg path {
-            fill: $icon_high_accent;
-        }
-    }
-
-    &Paragraph {
-        padding: 16px 20px 17px 20px;
-    
-        &Number {
-            color: $text_low_accent;
-            margin-right: 10px;
-        }
-    
-        &Name {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            margin-right: 10px;
-        }
-    
-        &Remove {
-            width: 16px;
-            height: 16px;
-            margin-left: auto;
-            cursor: pointer;
-
-            svg path {
-                fill: $icon_high_accent;
-            }
-        }
-    }
 }
 
 .tabs {
     &List {
         display: flex;
+        padding: 0 20px;
+        @include text-regular;
     }
 
     &Link {
-        padding: 15px 10px 12px 10px;
         list-style-type: none;
         cursor: pointer;
+        padding: 15px 10px 12px 10px;
+        
+        &Active {
+            outline: none;
+            border-bottom: 2px solid $el_accent_high;
+        }
     }
 
     &Panel {
