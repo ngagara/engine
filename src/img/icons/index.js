@@ -11,6 +11,7 @@ export { ImageIcon } from "./ImageIcon";
 export { TrashIcon } from "./TrashIcon";
 export { PlusIcon } from "./PlusIcon";
 export { ArrowLeftIcon } from "./ArrowLIcon";
+export { ArrowRIcon } from "./ArrowRIcon";
 export { TriangleUpIcon } from "./TriangleUpIcon";
 export { TriangleDownIcon } from "./TriangleDownIcon";
 export { StrikethroughIcon } from "./StrikethroughIcon";
@@ -18,6 +19,3 @@ export { BoldIcon } from "./BoldIcon";
 export { UnderlinedIcon } from "./UnderlinedIcon";
 export { ItalicIcon } from "./ItalicIcon";
 export { SaveIcon } from "./SaveIcon";
-
-
-
