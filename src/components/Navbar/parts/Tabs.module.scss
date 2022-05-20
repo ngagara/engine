@@ -27,14 +27,11 @@
    }
 
    &Disabled {
-      background: $bg_second;
       color: $text_disabled_light;
-      cursor: unset;
  
       &:hover {
-       background: $bg_second;
+         background-color: $bg-first;
        color: $text_disabled_light;
-       cursor: unset;
       }
     }
 }

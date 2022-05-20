@@ -2,8 +2,6 @@
 @import '../../_mixins.scss';
 
 .link {
-  position: relative;
-  top: 6px;
   text-decoration: none;
   @include text-small($color: $el_accent_high)
 }

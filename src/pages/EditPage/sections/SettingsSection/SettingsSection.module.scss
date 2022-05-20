@@ -50,6 +50,11 @@
     @include text-small($color: $el_accent_high)
   }
 
+  &Link {
+    position: relative;
+    top: 7px;
+  }
+
   &Container {
     display: flex;
     flex-direction: column;

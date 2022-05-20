@@ -13,7 +13,7 @@ const RandomRules = () => {
         <Random />
         <Random />
         <SectionContainer className={styles.randomButton}>
-          <Button bgWhite>+ Добавить действие</Button>
+          <Button bgWhite>+ Добавить случайность</Button>
         </SectionContainer>
       </div>
     </>

@@ -42,7 +42,7 @@ const SettingsSection = () => {
         />
         <div className={styles.sectionInputRoot}>
           <Input label={"Токен"} className={styles.sectionInput} />
-          <Link text={"@bot"} />
+          <Link text={"@bot"} className={styles.sectionLink} />
         </div>
         <div className={styles.sectionButtons}>
           <Button bgWhite onClick={() => dispatch(toggleModal("delete_book"))}>
@@ -56,10 +56,10 @@ const SettingsSection = () => {
           Все данные будут безвозвратно утеряны
         </p>
         <div className={styles.sectionModal}>
-          <Button onClick={() => dispatch(toggleModal("delete_book"))}>
+          <Button bgWhite onClick={() => dispatch(toggleModal("delete_book"))}>
             Закрыть
           </Button>
-          <Button bgWhite>Удалить</Button>
+          <Button>Удалить</Button>
         </div>
       </Modal>
     </div>

@@ -7,6 +7,7 @@
     width: 270px;
     min-height: calc(100vh - 50px);
     @include text-regular;
+    position: relative;
 
     &RootTitle {
         display: flex;

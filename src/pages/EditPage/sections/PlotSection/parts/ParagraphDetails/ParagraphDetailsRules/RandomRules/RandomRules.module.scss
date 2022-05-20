@@ -4,10 +4,12 @@
 .random {
 
   &Container {
-    padding: 15px 30px 0 30px;
+    padding: 15px 30px;
+    border-bottom: 1px solid #FFFFFF;
   }
 
   &Button {
+    padding: 15px 30px;
    border-bottom: 1px solid $bg_third_light;
   }
 

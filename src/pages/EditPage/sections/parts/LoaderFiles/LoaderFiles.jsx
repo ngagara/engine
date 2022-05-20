@@ -23,10 +23,14 @@ const LoaderFiles = ({ label, modalTitle, modalText, typeModal, active }) => {
         <div className={styles.loaderModal}>
           {modalText && <p className={styles.loaderModalText}>{modalText}</p>}
           <div className={styles.loaderModalButtonsRoot}>
-            <Button onClick={() => dispatch(toggleModal(typeModal))}>
+            <Button
+              bgWhite
+              bgWhite
+              onClick={() => dispatch(toggleModal(typeModal))}
+            >
               Закрыть
             </Button>
-            <Button bgWhite>Удалить</Button>
+            <Button>Удалить</Button>
           </div>
         </div>
       </Modal>
