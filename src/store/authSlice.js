@@ -1,17 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
-// временное решение пока нет нормально авторизации
+import {
+  createSlice
+} from "@reduxjs/toolkit";
+
 const supportSlice = createSlice({
   name: "auth",
   initialState: {
-    login: false,
-    password: "123123"
+    email: null,
+    token: null,
+    id: null
   },
   reducers: {
-    setLogin(state) {
-      state.login = true;
-    }
+    setUser(state, action) {
+      state.email = action.payload.email;
+      state.id = action.payload.id;
+      state.token = action.payload.token;
+    },
   }
 });
 
-export const { setLogin } = supportSlice.actions;
+export const {
+  setUser
+} = supportSlice.actions;
 export default supportSlice.reducer;
