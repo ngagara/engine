@@ -1,3 +1,4 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "../../../store/authSlice";
@@ -15,12 +16,24 @@ const AuthForm = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state.auth);
+  // const auth = useSelector((state) => state.auth);
   const required = errors.password && errors.password.type === "required";
 
   // временное решение пока нет нормально авторизации
   const pushBooksPage = (data) => {
-    console.log(auth);
+  const auth = getAuth();
+
+    signInWithEmailAndPassword(auth, data.login, data.password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
     // if (data.password !== password) {
     //   setError("password");
     // } else {
