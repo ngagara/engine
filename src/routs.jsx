@@ -32,10 +32,10 @@ export const NAV_MENU = [
   },
   {
     id: 3,
-    path: "",
+    path: "users",
     name: "Пользователи",
     icon: null,
-    disabled: true,
+    disabled: false,
     component: null
   }
 ];

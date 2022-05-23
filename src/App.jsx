@@ -13,6 +13,7 @@ export default function App() {
       <Route element={<ProtectedRoute isLogin={true} />}>
         <Route element={<AppLayout />}>
           <Route path="books" element={<BooksPage />} />
+          <Route path="users" element={<BooksPage />} />
           <Route path="books/:id/*" element={<EditPage />}>
             {SIDEBAR_MENU &&
               SIDEBAR_MENU.map((route) =>

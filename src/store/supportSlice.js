@@ -7,6 +7,7 @@ const supportSlice = createSlice({
       delete_image: false,
       delete_book: false,
       delete_sound: false,
+      delete_paragraphs: false,
       login: false
     }
   },

@@ -25,7 +25,6 @@ const LoaderFiles = ({ label, modalTitle, modalText, typeModal, active }) => {
           <div className={styles.loaderModalButtonsRoot}>
             <Button
               bgWhite
-              bgWhite
               onClick={() => dispatch(toggleModal(typeModal))}
             >
               Закрыть
