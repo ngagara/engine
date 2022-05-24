@@ -1,19 +1,26 @@
 import { useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { AppLayout, BooksPage, EditPage, LoginPage, NotFound, ProtectedRoute } from "./pages";
+import {
+  AppLayout,
+  BooksPage,
+  EditPage,
+  LoginPage,
+  NotFound,
+  ProtectedRoute,
+  UsersPage
+} from "./pages";
 import { SIDEBAR_MENU } from "./routs";
 
 export default function App() {
-
   const login = useSelector((state) => state.auth.login);
 
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
-      <Route element={<ProtectedRoute isLogin={login} />}>
+      <Route element={<ProtectedRoute isLogin={true} />}>
         <Route element={<AppLayout />}>
           <Route path="books" element={<BooksPage />} />
-          <Route path="users" element={<BooksPage />} />
+          <Route path="users" element={<UsersPage />} />
           <Route path="books/:id/*" element={<EditPage />}>
             {SIDEBAR_MENU &&
               SIDEBAR_MENU.map((route) =>
