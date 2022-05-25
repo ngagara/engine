@@ -5,7 +5,7 @@ import { Input, Modal, Button } from "../../../../../ui-kit";
 import classNames from "classnames";
 import styles from "./LoaderFiles.module.scss";
 
-const LoaderFiles = ({ label, modalTitle, modalText, typeModal, active }) => {
+const LoaderFiles = ({ label, modalTitle, modalText, typeModal, active, link }) => {
   const dispatch = useDispatch();
 
   return (

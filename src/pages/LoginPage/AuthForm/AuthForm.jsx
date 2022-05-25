@@ -32,12 +32,12 @@ const AuthForm = () => {
     //     const errorCode = error.code;
     //     const errorMessage = error.message;
     //   });
-    if (data.password !== password) {
-      setError("password");
-    } else {
-      dispatch(setLogin());
-      navigate("/books", { replace: true });
-    }
+    // if (data.password !== password) {
+    //   setError("password");
+    // } else {
+    //   dispatch(setLogin());
+    //   navigate("/books", { replace: true });
+    // }
   };
 
   return (

@@ -1,34 +1,25 @@
 import { useSelector } from "react-redux";
-import LoaderFiles from "../parts/LoaderFiles/LoaderFiles";
+import ImageItem from "./parts/ImageItem/ImageItem";
 import { SectionContainer } from "../parts/SectionContainer/SectionContainer";
-import { Container, Link } from "../../../../ui-kit";
+import { Container } from "../../../../ui-kit";
+import LoaderFiles from "../parts/LoaderFiles/LoaderFiles";
 import styles from "./ImagesSection.module.scss";
 
-export const ImagesSection = () => {
+const ImagesSection = () => {
   const { delete_image } = useSelector((state) => state.support.modals);
   return (
     <div className={styles.section}>
       <SectionContainer>
         <p className={styles.sectionTitle}>Изображения</p>
       </SectionContainer>
-      {/* тут будет реальная проверка на наличие изображений  */}
+      {/* тут будет проверка на наличие изображений  */}
       <Container className={styles.sectionGrid}>
-        <div className={styles.sectionItem}>
-          <Link text={"Параграф #3"} />
-          <img
-            src={
-              "https://images.unsplash.com/photo-1601848029242-fecf0a54e655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
-            }
-            alt={"book.name"}
-            className={styles.sectionItemImage}
-          />
-          <LoaderFiles
-            modalTitle={"Удалить изображение?"}
-            modalText={"Публикация в параграфе будет отменена"}
-            active={delete_image}
-            typeModal={"delete_image"}
-          />
-        </div>
+        <ImageItem link={'Параграф # 1'} src={'https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'} />
+        <ImageItem link={'Параграф # 2'} src={'https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'} />
+        <ImageItem link={'Параграф # 3'} src={'https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'} />
+        <ImageItem link={'Параграф # 4'} src={'https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'} />
+        <ImageItem link={'Параграф # 5'} src={'https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'} />
+        <ImageItem link={'Параграф # 6'} src={'https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'} />
       </Container>
     </div>
   );
