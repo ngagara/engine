@@ -2,14 +2,8 @@ import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { ReloadIcon } from "../../../../img/icons";
 import { toggleModal } from "../../../../store/supportSlice";
-import { Container, Button, Modal, Input, Options } from "../../../../ui-kit";
+import { Container, Button, Modal, Input, Select } from "../../../../ui-kit";
 import styles from "./HeaderUsers.module.scss";
-
-const options = [
-  { value: "chocolate", label: "Администратор" },
-  { value: "strawberry", label: "Автор" },
-  { value: "vanilla", label: "Тестировщик" }
-];
 
 const HeaderUsers = () => {
   const dispatch = useDispatch();
@@ -38,7 +32,10 @@ const HeaderUsers = () => {
               <ReloadIcon />
             </div>
           </div>
-          <Options />
+          <Select
+            label={"Роль"}
+            options={["Администратор", "Автор", "Тестировщик"]}
+          />
           <div className={styles.formButtons}>
             <Button bgWhite>Закрыть</Button>
             <Button>Добавить</Button>
