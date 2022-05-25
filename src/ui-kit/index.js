@@ -6,3 +6,4 @@ export { Input } from "./Input/Input";
 export { Link } from "./Link/Link";
 export { Dropdown } from "./Dropdown/Dropdown";
 export { Textarea } from "./Textarea/Textarea";
+export { Options } from "./Options/Options";

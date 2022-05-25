@@ -7,7 +7,6 @@ https://www.figma.com/file/2s5bZoEOQGMRdJonqphJo2/engine?node-id=2%3A3
 // ts
 // memo
 // комп роутинг с константами
-// логи рендеров в комп
 // разбить стили на файтя в табс
 // сохранять логин статус в локал сторадж
 // прелоудер
@@ -27,3 +26,5 @@ https://www.figma.com/file/2s5bZoEOQGMRdJonqphJo2/engine?node-id=2%3A3
 // протекстировать роутинг
 // проверка на ререндер
 // поправить инпуты
+
+https://www.youtube.com/watch?v=nqYn7HbkKCg

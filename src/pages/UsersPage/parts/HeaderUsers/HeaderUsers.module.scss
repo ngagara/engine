@@ -1,0 +1,52 @@
+@import '../../../../_variables.scss';
+@import '../../../../mixins.scss';
+
+.header {
+   background-color: $bg_second_light;
+   justify-content: space-between;
+   align-items: center;
+   padding: 9px 30px;
+
+   &Title {
+     @include text-regular
+   }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &Inputs {
+      display: flex;
+      align-items: center;
+    }
+
+    &Input {
+      margin-left: 30px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &Icon {
+      position: relative;
+      top: 6px;
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+      cursor: pointer;
+       svg path {
+         fill: $icon_high_accent;
+       }
+    }
+  
+    &Buttons {
+      display: flex;
+      align-self: flex-end;
+      gap: 10px;
+    }
+  
+  }
+

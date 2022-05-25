@@ -30,5 +30,3 @@ export const Input = ({ ...props }) => {
     </div>
   );
 };
-
-// https://codepen.io/adamlaki/pen/VYpewx

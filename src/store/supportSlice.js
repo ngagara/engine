@@ -8,6 +8,9 @@ const supportSlice = createSlice({
       delete_book: false,
       delete_sound: false,
       delete_paragraphs: false,
+      add_user: false,
+      delete_user: false,
+      edit_user: false,
       login: false
     }
   },
