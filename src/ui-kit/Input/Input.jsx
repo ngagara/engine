@@ -16,17 +16,34 @@ export const Input = ({ ...props }) => {
 
   return (
     <div className={classNames(styles.root, { [className]: className })}>
-      {label && <label htmlFor={label}>{label}</label>}
-      <input
-        id={name}
-        type={type}
-        className={classNames(styles.input, { [styles.inputInvalid]: invalid })}
-        placeholder={placeholder ? placeholder : "-"}
-        data-text={"-"}
-        disabled={disabled}
-        required={required}
-        {...register}
-      />
+      {label && <label>{label}</label>}
+      {type === "file" ? (
+        <label htmlFor={name} className={styles.file} data-text={"-"}>
+          <input
+            id={name}
+            type={type}
+            className={classNames(styles.input, {
+              [styles.inputInvalid]: invalid
+            })}
+            placeholder={placeholder ? placeholder : "-"}
+            disabled={disabled}
+            required={required}
+            {...register}
+          />
+        </label>
+      ) : (
+        <input
+          id={name}
+          type={type}
+          className={classNames(styles.input, {
+            [styles.inputInvalid]: invalid
+          })}
+          placeholder={placeholder ? placeholder : "-"}
+          disabled={disabled}
+          required={required}
+          {...register}
+        />
+      )}
     </div>
   );
 };

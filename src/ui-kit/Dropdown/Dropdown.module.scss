@@ -28,11 +28,13 @@
   &Content {
     visibility: hidden;
     height: 0;
+    transition: height .3s ease;
 
     &Active {
      visibility: visible;
      height: 100%;
      padding: 0 30px 15px 30px;
+
     }
   }
 }

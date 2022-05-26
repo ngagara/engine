@@ -2,15 +2,19 @@ import styles from "./Select.module.scss";
 
 export const Select = ({ label, options, disabled }) => {
   return (
-    <label className={styles.select} htmlFor="slct">
-      {label && <label>{label}</label>}
+    <div className={styles.select}>
+      {label && <label htmlFor="slct">{label}</label>}
       <select id="slct" required="required" disabled={disabled}>
         <option defaultValue="#" selected="selected">
-          One
+          <span>312</span>
         </option>
-        <option defaultValue="#">Two</option>
-        <option defaultValue="#">Three</option>
+        <option defaultValue="#">
+          <span>123</span>
+        </option>
+        <option defaultValue="#">
+          <span>123</span>
+        </option>
       </select>
-    </label>
+    </div>
   );
 };
