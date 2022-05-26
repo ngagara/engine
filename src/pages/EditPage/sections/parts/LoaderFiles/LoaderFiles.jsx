@@ -1,16 +1,23 @@
 import { useDispatch } from "react-redux";
 import { toggleModal } from "../../../../../store/supportSlice";
 import { TrashIcon } from "../../../../../img/icons";
-import { Input, Modal, Button } from "../../../../../ui-kit";
+import { Modal, Button, FileInput } from "../../../../../ui-kit";
 import classNames from "classnames";
 import styles from "./LoaderFiles.module.scss";
 
-const LoaderFiles = ({ label, modalTitle, modalText, typeModal, active, link }) => {
+const LoaderFiles = ({
+  label,
+  modalTitle,
+  modalText,
+  typeModal,
+  active,
+  link
+}) => {
   const dispatch = useDispatch();
 
   return (
     <div className={styles.loader}>
-      <Input label={label} type={"file"} className={styles.loaderInput} />
+      <FileInput label={label} type={"file"} className={styles.loaderInput} />
       <div
         className={classNames(styles.loaderIcon, {
           [styles.loaderIconTop]: label
@@ -23,10 +30,7 @@ const LoaderFiles = ({ label, modalTitle, modalText, typeModal, active, link }) 
         <div className={styles.loaderModal}>
           {modalText && <p className={styles.loaderModalText}>{modalText}</p>}
           <div className={styles.loaderModalButtonsRoot}>
-            <Button
-              bgWhite
-              onClick={() => dispatch(toggleModal(typeModal))}
-            >
+            <Button bgWhite onClick={() => dispatch(toggleModal(typeModal))}>
               Закрыть
             </Button>
             <Button>Удалить</Button>
