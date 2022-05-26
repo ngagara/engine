@@ -140,19 +140,5 @@
     border: 2px $el_accent_low;
   }
 
-  &:focus::before {
-    background-color: $el_accent_low;
-    border: 2px $el_accent_low;
-  }
-
-  &:disabled::before {
-    background-color: $el_accent_disabled;
-    border: 2px solid $el_accent_disabled;
-  }
-
-  &:disabled::after {
-    color: $text_disabled;
-  }
-
 }
 
