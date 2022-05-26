@@ -7,6 +7,11 @@
   @include text-regular;
   position: relative;
 
+  label {
+    @include text-small($color: $text_low_accent);
+    margin-bottom: 2px;
+  }
+
 .file {
   background: $bg_third_light;
   border: 2px solid $el_accent_high;
