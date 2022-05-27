@@ -8,19 +8,19 @@ const booksSlice = createSlice({
     new_book: {
       id: 1,
       name: "Новая книга",
-      src: plug
+      image: plug
     },
     books: [
       {
         id: 1,
         name: "Преступный маг",
-        src:
+        image:
           "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
       },
       {
         id: 2,
         name: "Непреступный маг",
-        src:
+        image:
           "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
       }
     ],

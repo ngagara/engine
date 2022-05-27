@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../src/store";
 import App from "./App.jsx";
-import './firebase';
+import "./firebase";
 import "./index.scss";
 
 createRoot(document.getElementById("root")).render(
@@ -16,3 +16,29 @@ createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
+const books = [
+  {
+    id: 1,
+    name: "Преступный маг",
+    image: "",
+    paraghraphs: [
+      {
+        id: 1,
+        name: "",
+        choise: {
+          image: "",
+          text: "",
+          link: "",
+          sound: ""
+        },
+        random: {
+          image: "",
+          text: "",
+          link: "",
+          sound: ""
+        }
+      }
+    ]
+  }
+];

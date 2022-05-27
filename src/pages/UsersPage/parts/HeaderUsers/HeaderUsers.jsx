@@ -34,7 +34,7 @@ const HeaderUsers = () => {
           </div>
           <Select
             label={"Роль"}
-            options={["Администратор", "Автор", "Тестировщик"]}
+            options={["Тестировщик", "Автор", "Администратор"]}
           />
           <div className={styles.formButtons}>
             <Button bgWhite>Закрыть</Button>

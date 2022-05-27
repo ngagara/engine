@@ -31,7 +31,13 @@ const SettingsSection = () => {
           className={styles.sectionInput}
           placeholder={book.name}
         />
-        {book.name !== "Новая книга" && (
+        {book.name !== "Новая книга" ? (
+          <img
+            src={"../../../../image/plug.png"}
+            alt={book.name}
+            className={styles.sectionImage}
+          />
+        ) : (
           <img src={book.src} alt={book.name} className={styles.sectionImage} />
         )}
         <LoaderFiles

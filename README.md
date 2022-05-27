@@ -6,6 +6,7 @@ https://www.figma.com/file/2s5bZoEOQGMRdJonqphJo2/engine?node-id=2%3A3
 // shimmer
 // ts
 // memo
+// lazy
 // комп роутинг с константами
 // разбить стили на файтя в табс
 // сохранять логин статус в локал сторадж
@@ -15,20 +16,22 @@ https://www.figma.com/file/2s5bZoEOQGMRdJonqphJo2/engine?node-id=2%3A3
 // redux > reduxquery > reduxthunk
 // разбить сеттингс и имаджес на комп
 // сайд бар уходит по потере фокуса
-// ограничить контейнер картинок
 // firebase auth
 // отцентровать текст
 // vueport
-// переверстать инпут тайп файлс
 // тост по сохранению
 // дропдауны остаются открытыми после перехода, посмотреть доку или своё решение
-//плавный дропдаун
+// плавный дропдаун
 // перестилизовать скролл
 // протекстировать роутинг
 // проверка на ререндер
-// поправить инпуты и селект
+// поправить селект
 // убрать баг с прокруткой
 // сделать моковые данные
 // разнести всё по компонентам
+/focus tabindex
 
 https://www.youtube.com/watch?v=nqYn7HbkKCg
+https://codesandbox.io/s/5h1q5?file=/src/index.js:93-103
+https://towardsdev.com/how-to-create-an-accessible-custom-select-dropdown-in-react-9d9858415f10
+https://qna.habr.com/q/1015390
