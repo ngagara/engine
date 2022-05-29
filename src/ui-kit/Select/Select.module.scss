@@ -5,12 +5,50 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  position: relative;
-  max-width: 200px;
 
   label {
     @include text-small($color: $text_low_accent);
     margin-bottom: 2px;
+  }
+
+  &Container {
+    position: relative;
+    cursor: pointer;
+
+    &:hover .selectButton {
+      border: 2px solid $el_accent_low;
+    }
+
+    &:hover .selectControl {
+      background-color: $el_accent_low;
+    }
+
+    &:hover .selectOptions {
+      border: 2px solid $el_accent_low;
+    }
+
+    &Disabled {
+      & .selectButton {
+        cursor: initial;
+        border: 2px solid $el_accent_disabled;
+        color: $text_disabled;
+      }
+
+      & .selectControl {
+        background-color: $el_accent_disabled;
+        pointer-events: none;
+      }
+
+      &:hover .selectButton {
+        border: 2px solid $el_accent_disabled;
+      }
+
+      &:hover .selectControl {
+        cursor: initial;
+        background-color: $el_accent_disabled;
+      }
+    }
+
   }
 
   &Button {
@@ -22,23 +60,9 @@
     border-radius: 4px;
     height: 33px;
     padding: 8px 10px;
-    cursor: auto;
-    position: relative;
-    max-width: 200px;
+    cursor: pointer;
+    width: 100%;
     text-align: left;
-
-    &:hover {
-      border: 2px solid $el_accent_low;
-      cursor: pointer;
-    }
-
-    &:hover + .selectControl {
-      background-color: $el_accent_low;
-    }
-
-    &:hover + .selectOptions {
-      border: 2px solid $el_accent_low;
-    }
   }
 
   &Control {
@@ -62,26 +86,29 @@
   }
 
   &Options {
-      position: absolute;
-      top: 48px;
-      left: 0;
-      right: 0;
-      background-color: $bg_third_light;
-      border: 2px solid $el_accent_high;
-      @include text-regular($color: $text_high_accent);
-      visibility: hidden;
-      list-style: none;
-      border-radius: 4px;
-      max-width: 200px;
+    position: absolute;
+    top: 32px;
+    left: 0;
+    right: 0;
+    background-color: $bg_third_light;
+    border: 2px solid $el_accent_high;
+    @include text-regular($color: $text_high_accent);
+    visibility: hidden;
+    list-style: none;
+    border-radius: 4px;
 
-      &Show {
-        visibility: visible;
-      }
+    &Show {
+      visibility: visible;
+    }
   }
 
   &Option {
     padding: 8px 10px;
     cursor: pointer;
+
+    &Selected {
+      background-color: $bg_second_light;
+    }
 
     &:hover {
       background-color: $bg_second_light;
@@ -92,7 +119,3 @@
     }
   }
 }
-
-
-
-

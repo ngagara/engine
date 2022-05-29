@@ -35,6 +35,7 @@ const HeaderUsers = () => {
           <Select
             label={"Роль"}
             options={["Тестировщик", "Автор", "Администратор"]}
+            className={styles.formSelect}
           />
           <div className={styles.formButtons}>
             <Button bgWhite>Закрыть</Button>

@@ -2,11 +2,9 @@ import { useSelector } from "react-redux";
 import ImageItem from "./parts/ImageItem/ImageItem";
 import { SectionContainer } from "../parts/SectionContainer/SectionContainer";
 import { Container } from "../../../../ui-kit";
-import LoaderFiles from "../parts/LoaderFiles/LoaderFiles";
 import styles from "./ImagesSection.module.scss";
 
 const ImagesSection = () => {
-  const { delete_image } = useSelector((state) => state.support.modals);
   return (
     <div className={styles.section}>
       <SectionContainer>
