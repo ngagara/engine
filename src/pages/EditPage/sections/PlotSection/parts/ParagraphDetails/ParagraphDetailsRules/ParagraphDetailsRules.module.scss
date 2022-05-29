@@ -6,6 +6,7 @@
         display: flex;
         padding: 0 20px;
         @include text-regular;
+        background-color: $bg_second_light;
     }
 
     &Link {

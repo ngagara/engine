@@ -9,6 +9,7 @@
     cursor: pointer;
     @include text-regular;
     padding: 16px 20px 17px 20px;
+    background-color: $bg_second_light;
 
     svg path {
         fill: $red;

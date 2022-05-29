@@ -5,11 +5,13 @@
   &Container {
     padding: 15px 30px;
     border-bottom: 1px solid #FFFFFF;
+    background-color: $bg_second_light;
   }
 
   &Button {
     padding: 15px 30px;
     border-bottom: 1px solid $bg_third_light;
+    background-color: $bg_second_light;
    }
 
   &Name {
