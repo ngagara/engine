@@ -9,6 +9,7 @@
   label {
     @include text-small($color: $text_low_accent);
     margin-bottom: 2px;
+    user-select: none;
   }
 
   &Container {
@@ -61,6 +62,7 @@
     cursor: pointer;
     width: 100%;
     text-align: left;
+    user-select: none;
   }
 
   &Control {
