@@ -52,8 +52,6 @@
   }
 
   &Button {
-    display: flex;
-    align-items: center;
     background-color: $bg_third_light;
     border: 2px solid $el_accent_high;
     @include text-regular($color: $text_high_accent);

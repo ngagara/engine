@@ -48,6 +48,36 @@
     }
   }
 
+  &Books {
+
+     &Title {
+      @include text-regular;
+      margin-bottom: 20px;
+     }
+     &Container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-height: 177px;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+       
+      &::-webkit-scrollbar-track {
+        background-color: $bg_second_light;
+        border-radius: 10px;
+        margin: 5px;
+      }
+       
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $el_accent_disabled;
+      }
+     }
+  }
+
   &Buttons {
     display: flex;
     align-self: flex-end;

@@ -2,7 +2,14 @@ import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { ReloadIcon } from "../../../../img/icons";
 import { toggleModal } from "../../../../store/supportSlice";
-import { Container, Button, Modal, Input, Select } from "../../../../ui-kit";
+import {
+  Container,
+  Button,
+  Modal,
+  Input,
+  Select,
+  Checkbox
+} from "../../../../ui-kit";
 import styles from "./HeaderUsers.module.scss";
 
 const HeaderUsers = () => {
@@ -37,6 +44,21 @@ const HeaderUsers = () => {
             options={["Тестировщик", "Автор", "Администратор"]}
             className={styles.formSelect}
           />
+          <div className={styles.formBooks}>
+            <p className={styles.formBooksTitle}>Доступные книги</p>
+            <div className={styles.formBooksContainer}>
+              <Checkbox label={"Новая книга"} name={"qwe"} />
+              <Checkbox label={"Новая книга"} name={"123"} />
+              <Checkbox label={"Новая книга"} name={"qewr"} />
+              <Checkbox label={"Новая книга"} name={"wer"} />
+              <Checkbox label={"Новая книга"} name={"df"} />
+              <Checkbox label={"Новая книга"} name={"dasd"} />
+              <Checkbox label={"Новая книга"} name={"dxcvf"} />
+              <Checkbox label={"Новая книга"} name={"dxcvf"} />
+              <Checkbox label={"Новая книга"} name={"dxcvxxf"} />
+              <Checkbox label={"Новая книга"} name={"dfwed"} />
+            </div>
+          </div>
           <div className={styles.formButtons}>
             <Button bgWhite>Закрыть</Button>
             <Button>Добавить</Button>
