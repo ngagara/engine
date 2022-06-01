@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../../../../store/supportSlice";
@@ -7,14 +8,22 @@ import generator from "generate-password";
 import classNames from "classnames";
 import styles from "./UserForm.module.scss";
 
-const UserForm = ({ role, modalId }) => {
+const UserForm = ({ role, modalId, login }) => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.books.books);
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors }
+  } = useForm();
   const disabled = role === "Администратор";
-  const { register, handleSubmit, setValue } = useForm();
+
   const onSubmit = (data) => console.log(data);
 
-  console.log(books);
+  useEffect(() => {
+    setValue("login", login);
+  }, []);
 
   const HandelPasswordGenerate = () => {
     const password = generator.generate({
@@ -32,6 +41,7 @@ const UserForm = ({ role, modalId }) => {
           label={"Имя пользователя"}
           register={{ ...register("login", { required: true }) }}
           className={styles.formInput}
+          required={errors.login}
           disabled={disabled}
         />
         <Input
@@ -45,7 +55,7 @@ const UserForm = ({ role, modalId }) => {
       </div>
       <Select
         label={"Роль"}
-        options={["-", "Тестировщик", "Автор", "Администратор"]}
+        options={["Автор", "Тестировщик"]}
         className={styles.formSelect}
         disabled={disabled}
       />
@@ -59,7 +69,7 @@ const UserForm = ({ role, modalId }) => {
         </p>
         <div className={styles.formBooksContainer}>
           {books &&
-            books.map((book, index) => (
+            books.map((book) => (
               <Checkbox
                 key={book.id}
                 label={book.name}

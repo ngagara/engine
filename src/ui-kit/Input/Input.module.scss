@@ -67,6 +67,7 @@
 
     &:disabled {
       border: 2px solid $el_accent_disabled;
+      @include text-regular($color: $text_disabled);
       cursor: unset;
     }
 

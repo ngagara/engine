@@ -38,7 +38,12 @@ const User = ({ id, login, role, books }) => {
         )}
       </Container>
       <Modal title={"Пользователь"} active={modals[id]} id={id.toString()}>
-        <UserForm modalId={id.toString()} books={books} role={role} />
+        <UserForm
+          login={login}
+          modalId={id.toString()}
+          books={books}
+          role={role}
+        />
       </Modal>
     </>
   );
