@@ -17,9 +17,7 @@ const UserForm = ({ books, role, modalId }) => {
     const password = generator.generate({
       length: 6,
       numbers: true,
-      uppercase: false,
-      symbols: true,
-      exclude: "<>~!{}[]'/|-_:;`*,.^()"
+      uppercase: false
     });
     setValue("password", password);
   };

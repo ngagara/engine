@@ -32,6 +32,10 @@
     margin-left: 10px;
     cursor: pointer;
 
+    &:hover {
+      transform: rotate(90deg);
+    }
+
     svg path {
       fill: $icon_high_accent;
     }
