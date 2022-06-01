@@ -17,9 +17,12 @@ const supportSlice = createSlice({
   reducers: {
     toggleModal(state, action) {
       state.modals[action.payload] = !state.modals[action.payload];
+    },
+    setModalState(state, action) {
+      state.modals = { ...state.modals, [action.payload]: false };
     }
   }
 });
 
-export const { toggleModal } = supportSlice.actions;
+export const { toggleModal, setModalState } = supportSlice.actions;
 export default supportSlice.reducer;

@@ -42,6 +42,10 @@
      &Title {
       @include text-regular;
       margin-bottom: 20px;
+
+      &Disabled {
+        @include text-regular($color: $text_disabled);
+      }
      }
      &Container {
       display: flex;

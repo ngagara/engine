@@ -21,6 +21,10 @@
 
    &Books {
     color: $text_low_accent;
+
+    &Container {
+      display: flex;
+    }
    }
 
    &Icon {

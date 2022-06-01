@@ -8,11 +8,12 @@ export const Select = ({ label, options, disabled, className }) => {
 
   const ref = useRef(null);
 
-  useEffect(()=>{
-    const onClick = e => ref.current.contains(e.target) || setIsOptionsOpen(false);
-    document.addEventListener('click', onClick);
-    return () => document.removeEventListener('click', onClick);
-  }, [])
+  useEffect(() => {
+    const onClick = (e) =>
+      ref.current.contains(e.target) || setIsOptionsOpen(false);
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
 
   const toggleOptions = () => {
     setIsOptionsOpen(!isOptionsOpen);
@@ -24,9 +25,17 @@ export const Select = ({ label, options, disabled, className }) => {
   };
 
   return (
-    <div ref={ref} onClick={toggleOptions} className={classNames(styles.select, { [className]: className })}>
+    <div
+      ref={ref}
+      onClick={toggleOptions}
+      className={classNames(styles.select, { [className]: className })}
+    >
       {label && <label>{label}</label>}
-      <div className={classNames(styles.selectContainer, { [styles.selectContainerDisabled]: disabled })}>
+      <div
+        className={classNames(styles.selectContainer, {
+          [styles.selectContainerDisabled]: disabled
+        })}
+      >
         <button
           disabled={disabled}
           type="button"
@@ -47,8 +56,11 @@ export const Select = ({ label, options, disabled, className }) => {
           {options &&
             options.map((option, index) => (
               <li
-                className={classNames(styles.selectOption, { [styles.selectOptionSelected]: index === selectedOption })}
+                className={classNames(styles.selectOption, {
+                  [styles.selectOptionSelected]: index === selectedOption
+                })}
                 id={option}
+                key={index}
                 onClick={() => {
                   setSelectedThenCloseDropdown(index);
                 }}

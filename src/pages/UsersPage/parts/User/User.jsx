@@ -1,23 +1,46 @@
+import { useEffect } from "react";
+import UserForm from "../UserForm/UserForm";
+import { useDispatch, useSelector } from "react-redux";
+import { setModalState } from "../../../../store/supportSlice";
+import { toggleModal } from "../../../../store/supportSlice";
+import { Container, Modal } from "../../../../ui-kit";
 import { TrashIcon } from "../../../../img/icons";
-import { Container } from "../../../../ui-kit";
 import styles from "./User.module.scss";
 
-const User = ({ login, role, books }) => {
+const User = ({ id, login, role, books }) => {
+  const dispatch = useDispatch();
+  const modals = useSelector((state) => state.support.modals);
+  const users = useSelector((state) => state.auth.users);
+
+  useEffect(() => {
+    users.forEach((user) => {
+      dispatch(setModalState(user.id));
+    });
+  }, []);
+
   return (
-    <Container className={styles.user}>
-      <p className={styles.userLogin}>{login}</p>
-      <p className={styles.userRole}>{role}</p>
-      {role !== "Администратор" && (
-        <>
-          <p
-            className={styles.userBooks}
-          >{`${"Преступный маг"}, ${"Преступный маг"}`}</p>
-          <div className={styles.userIcon}>
-            <TrashIcon />
-          </div>
-        </>
-      )}
-    </Container>
+    <>
+      <Container className={styles.user}>
+        <p
+          className={styles.userLogin}
+          onClick={() => dispatch(toggleModal(id.toString()))}
+        >
+          {login}
+        </p>
+        <p className={styles.userRole}>{role}</p>
+        {role !== "Администратор" && (
+          <>
+            <p className={styles.userBooks}>{books.join(", ")}</p>
+            <div className={styles.userIcon}>
+              <TrashIcon />
+            </div>
+          </>
+        )}
+      </Container>
+      <Modal title={"Пользователь"} active={modals[id]} id={id.toString()}>
+        <UserForm modalId={id.toString()} books={books} role={role} />
+      </Modal>
+    </>
   );
 };
 
