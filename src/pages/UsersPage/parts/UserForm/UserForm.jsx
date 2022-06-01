@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../../../../store/supportSlice";
 import { ReloadIcon } from "../../../../img/icons";
 import { Button, Input, Select, Checkbox } from "../../../../ui-kit";
@@ -7,11 +7,14 @@ import generator from "generate-password";
 import classNames from "classnames";
 import styles from "./UserForm.module.scss";
 
-const UserForm = ({ books, role, modalId }) => {
+const UserForm = ({ role, modalId }) => {
   const dispatch = useDispatch();
+  const books = useSelector((state) => state.books.books);
   const disabled = role === "Администратор";
   const { register, handleSubmit, setValue } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  console.log(books);
 
   const HandelPasswordGenerate = () => {
     const password = generator.generate({
@@ -58,9 +61,9 @@ const UserForm = ({ books, role, modalId }) => {
           {books &&
             books.map((book, index) => (
               <Checkbox
-                key={index}
-                label={book}
-                name={book}
+                key={book.id}
+                label={book.name}
+                name={book.name}
                 disabled={disabled}
               />
             ))}

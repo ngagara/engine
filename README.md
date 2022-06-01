@@ -31,6 +31,7 @@ https://www.figma.com/file/2s5bZoEOQGMRdJonqphJo2/engine?node-id=2%3A3
 // сделать моковые данные
 // разнести всё по компонентам
 /focus tabindex
+// нет доступных книг если сняты все галки
 
 https://www.youtube.com/watch?v=nqYn7HbkKCg
 https://codesandbox.io/s/5h1q5?file=/src/index.js:93-103
