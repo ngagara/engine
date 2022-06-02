@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../../../../store/supportSlice";
 import { ReloadIcon } from "../../../../img/icons";
@@ -15,6 +15,7 @@ const UserForm = ({ role, modalId, login }) => {
     register,
     handleSubmit,
     setValue,
+    control,
     formState: { errors }
   } = useForm();
   const disabled = role === "Администратор";
@@ -33,6 +34,12 @@ const UserForm = ({ role, modalId, login }) => {
     });
     setValue("password", password);
   };
+
+  const options = [
+    { value: "admin", label: "Администратор" },
+    { value: "tester", label: "Тестировщик" },
+    { value: "author", label: "Автор" }
+  ];
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -53,12 +60,21 @@ const UserForm = ({ role, modalId, login }) => {
           <ReloadIcon />
         </div>
       </div>
-      <Select
-        label={"Роль"}
-        options={["Автор", "Тестировщик"]}
-        className={styles.formSelect}
-        disabled={disabled}
+      <Controller
+        name="role"
+        control={control}
+        defaultValue="-"
+        render={({ field: { value } }) => (
+          <Select
+            label={"Роль"}
+            className={styles.formSelect}
+            disabled={disabled}
+            options={options}
+            value={value}
+          />
+        )}
       />
+
       <div className={styles.formBooks}>
         <p
           className={classNames(styles.formBooksTitle, {

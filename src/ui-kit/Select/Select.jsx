@@ -2,9 +2,16 @@ import { useState, useEffect, useRef } from "react";
 import classNames from "classnames";
 import styles from "./Select.module.scss";
 
-export const Select = ({ label, options, disabled, className }) => {
+export const Select = ({
+  label,
+  options,
+  disabled,
+  className,
+  value,
+  onChangeSelect
+}) => {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(0);
+  const [selectedOption, setSelectedOption] = useState("");
 
   const ref = useRef(null);
 
@@ -19,8 +26,8 @@ export const Select = ({ label, options, disabled, className }) => {
     setIsOptionsOpen(!isOptionsOpen);
   };
 
-  const setSelectedThenCloseDropdown = (index) => {
-    setSelectedOption(index);
+  const setSelectedThenCloseDropdown = (label) => {
+    setSelectedOption(label);
     setIsOptionsOpen(false);
   };
 
@@ -41,7 +48,7 @@ export const Select = ({ label, options, disabled, className }) => {
           type="button"
           className={styles.selectButton}
         >
-          {options[selectedOption]}
+          {value}
         </button>
         <div
           className={classNames(styles.selectControl, {
@@ -54,18 +61,16 @@ export const Select = ({ label, options, disabled, className }) => {
           })}
         >
           {options &&
-            options.map((option, index) => (
+            options.map((option) => (
               <li
                 className={classNames(styles.selectOption, {
-                  [styles.selectOptionSelected]: index === selectedOption
+                  [styles.selectOptionSelected]: option.label === selectedOption
                 })}
-                id={option}
-                key={index}
-                onClick={() => {
-                  setSelectedThenCloseDropdown(index);
-                }}
+                key={option.value}
+                value={option.value}
+                onClick={() => setSelectedThenCloseDropdown(option.label)}
               >
-                {option}
+                {option.label}
               </li>
             ))}
         </ul>
