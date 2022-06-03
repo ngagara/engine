@@ -8,29 +8,17 @@ export const Select = ({
   disabled,
   className,
   selectedValue,
-  onChangeOption
+  onChangeOption,
+  setDefaultLabel
 }) => {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(selectedValue);
 
   const ref = useRef(null);
-  // вынести в хелперы
-  const setDefaultRole = (role) => {
-    switch (role) {
-      case "admin":
-        return "Администратор";
-      case "tester":
-        return "Тестировщик";
-      case "author":
-        return "Автор";
-      default:
-        return "-";
-    }
-  };
 
   useEffect(() => {
-    setSelectedOption(setDefaultRole(selectedValue));
-  }, []);
+    setSelectedOption(setDefaultLabel(selectedValue));
+  }, [selectedValue]);
 
   useEffect(() => {
     const onClick = (e) =>

@@ -5,6 +5,7 @@ import { setModalState } from "../../../../store/supportSlice";
 import { toggleModal } from "../../../../store/supportSlice";
 import { Container, Modal } from "../../../../ui-kit";
 import { TrashIcon } from "../../../../img/icons";
+import { setDefaultRole } from "../../../../helpers";
 import styles from "./User.module.scss";
 
 const User = ({ id, login, role, books }) => {
@@ -17,19 +18,6 @@ const User = ({ id, login, role, books }) => {
       dispatch(setModalState(user.id));
     });
   }, []);
-
-  const setDefaultRole = (role) => {
-    switch (role) {
-      case "admin":
-        return "Администратор";
-      case "tester":
-        return "Тестировщик";
-      case "author":
-        return "Автор";
-      default:
-        return "-";
-    }
-  };
 
   return (
     <>

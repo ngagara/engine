@@ -1,11 +1,12 @@
 import { useEffect } from "react";
+import classNames from "classnames";
 import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../../../../store/supportSlice";
 import { ReloadIcon } from "../../../../img/icons";
 import { Button, Input, Select, Checkbox } from "../../../../ui-kit";
-import generator from "generate-password";
-import classNames from "classnames";
+import { setDefaultRole, passwordGenerate } from "../../../../helpers";
+import { options } from "../../constants";
 import styles from "./UserForm.module.scss";
 
 const UserForm = ({ role, modalId, login }) => {
@@ -27,20 +28,6 @@ const UserForm = ({ role, modalId, login }) => {
     setValue("login", login);
   }, []);
 
-  const HandelPasswordGenerate = () => {
-    const password = generator.generate({
-      length: 6,
-      numbers: true,
-      uppercase: false
-    });
-    setValue("password", password);
-  };
-
-  const options = [
-    { value: "tester", label: "Тестировщик" },
-    { value: "author", label: "Автор" }
-  ];
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <div className={styles.formInputs}>
@@ -57,7 +44,10 @@ const UserForm = ({ role, modalId, login }) => {
           className={styles.formInput}
           required={errors.password}
         />
-        <div className={styles.formIcon} onClick={HandelPasswordGenerate}>
+        <div
+          className={styles.formIcon}
+          onClick={() => passwordGenerate(setValue, "password")}
+        >
           <ReloadIcon />
         </div>
       </div>
@@ -74,6 +64,7 @@ const UserForm = ({ role, modalId, login }) => {
             options={options}
             selectedValue={value}
             onChangeOption={onChange}
+            setDefaultLabel={setDefaultRole}
           />
         )}
       />
