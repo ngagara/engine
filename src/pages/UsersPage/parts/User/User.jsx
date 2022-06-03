@@ -18,6 +18,19 @@ const User = ({ id, login, role, books }) => {
     });
   }, []);
 
+  const setDefaultRole = (role) => {
+    switch (role) {
+      case "admin":
+        return "Администратор";
+      case "tester":
+        return "Тестировщик";
+      case "author":
+        return "Автор";
+      default:
+        return "-";
+    }
+  };
+
   return (
     <>
       <Container className={styles.user}>
@@ -27,8 +40,8 @@ const User = ({ id, login, role, books }) => {
         >
           {login}
         </p>
-        <p className={styles.userRole}>{role}</p>
-        {role !== "Администратор" && (
+        <p className={styles.userRole}>{setDefaultRole(role)}</p>
+        {role !== "admin" && (
           <>
             <p className={styles.userBooks}>{books.join(", ")}</p>
             <div className={styles.userIcon}>

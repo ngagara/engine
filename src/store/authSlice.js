@@ -7,19 +7,19 @@ const supportSlice = createSlice({
       {
         id: 1,
         name: "admin@test.ru",
-        role: "Администратор",
+        role: "admin",
         books: ["Преступный Маг", "Не маг", "Маг но не приступный"]
       },
       {
         id: 2,
         name: "author@test.ru",
-        role: "Автор",
+        role: "author",
         books: ["Преступный Маг", "Маг", "Не маг но приступный"]
       },
       {
         id: 3,
         name: "test@test.ru",
-        role: "Тестировщик",
+        role: "tester",
         books: ["Преступный Маг", "Не маг"]
       }
     ]

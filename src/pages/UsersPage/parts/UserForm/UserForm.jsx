@@ -18,7 +18,8 @@ const UserForm = ({ role, modalId, login }) => {
     control,
     formState: { errors }
   } = useForm();
-  const disabled = role === "Администратор";
+
+  const disabled = role === "admin";
 
   const onSubmit = (data) => console.log(data);
 
@@ -36,7 +37,6 @@ const UserForm = ({ role, modalId, login }) => {
   };
 
   const options = [
-    { value: "admin", label: "Администратор" },
     { value: "tester", label: "Тестировщик" },
     { value: "author", label: "Автор" }
   ];
@@ -55,6 +55,7 @@ const UserForm = ({ role, modalId, login }) => {
           label={"Пароль"}
           register={{ ...register("password", { required: true }) }}
           className={styles.formInput}
+          required={errors.password}
         />
         <div className={styles.formIcon} onClick={HandelPasswordGenerate}>
           <ReloadIcon />
@@ -63,18 +64,19 @@ const UserForm = ({ role, modalId, login }) => {
       <Controller
         name="role"
         control={control}
-        defaultValue="-"
-        render={({ field: { value } }) => (
+        defaultValue={role ? role : "-"}
+        rules={{ required: true }}
+        render={({ field: { value, onChange } }) => (
           <Select
-            label={"Роль"}
+            labelSelect={"Роль"}
             className={styles.formSelect}
             disabled={disabled}
             options={options}
-            value={value}
+            selectedValue={value}
+            onChangeOption={onChange}
           />
         )}
       />
-
       <div className={styles.formBooks}>
         <p
           className={classNames(styles.formBooksTitle, {

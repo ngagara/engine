@@ -3,17 +3,34 @@ import classNames from "classnames";
 import styles from "./Select.module.scss";
 
 export const Select = ({
-  label,
+  labelSelect,
   options,
   disabled,
   className,
-  value,
-  onChangeSelect
+  selectedValue,
+  onChangeOption
 }) => {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState(selectedValue);
 
   const ref = useRef(null);
+  // вынести в хелперы
+  const setDefaultRole = (role) => {
+    switch (role) {
+      case "admin":
+        return "Администратор";
+      case "tester":
+        return "Тестировщик";
+      case "author":
+        return "Автор";
+      default:
+        return "-";
+    }
+  };
+
+  useEffect(() => {
+    setSelectedOption(setDefaultRole(selectedValue));
+  }, []);
 
   useEffect(() => {
     const onClick = (e) =>
@@ -26,9 +43,10 @@ export const Select = ({
     setIsOptionsOpen(!isOptionsOpen);
   };
 
-  const setSelectedThenCloseDropdown = (label) => {
+  const setSelectedThenCloseDropdown = (label, currentValue) => {
     setSelectedOption(label);
     setIsOptionsOpen(false);
+    onChangeOption((selectedValue = currentValue));
   };
 
   return (
@@ -37,7 +55,7 @@ export const Select = ({
       onClick={toggleOptions}
       className={classNames(styles.select, { [className]: className })}
     >
-      {label && <label>{label}</label>}
+      {labelSelect && <label>{labelSelect}</label>}
       <div
         className={classNames(styles.selectContainer, {
           [styles.selectContainerDisabled]: disabled
@@ -48,7 +66,7 @@ export const Select = ({
           type="button"
           className={styles.selectButton}
         >
-          {value}
+          {selectedOption}
         </button>
         <div
           className={classNames(styles.selectControl, {
@@ -68,7 +86,9 @@ export const Select = ({
                 })}
                 key={option.value}
                 value={option.value}
-                onClick={() => setSelectedThenCloseDropdown(option.label)}
+                onClick={() =>
+                  setSelectedThenCloseDropdown(option.label, option.value)
+                }
               >
                 {option.label}
               </li>
