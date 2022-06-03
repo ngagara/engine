@@ -89,7 +89,13 @@ const UserForm = ({ role, modalId, login }) => {
         </div>
       </div>
       <div className={styles.formButtons}>
-        <Button bgWhite onClick={() => dispatch(toggleModal(modalId))}>
+        <Button
+          bgWhite
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(toggleModal(modalId));
+          }}
+        >
           Закрыть
         </Button>
         <Button type={"submit"}>Применить</Button>
