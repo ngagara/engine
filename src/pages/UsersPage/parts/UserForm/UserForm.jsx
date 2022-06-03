@@ -6,12 +6,14 @@ import { toggleModal } from "../../../../store/supportSlice";
 import { ReloadIcon } from "../../../../img/icons";
 import { Button, Input, Select, Checkbox } from "../../../../ui-kit";
 import { setDefaultRole, passwordGenerate } from "../../../../helpers";
-import { options } from "../../constants";
+import { options } from "../../../../constants";
 import styles from "./UserForm.module.scss";
 
 const UserForm = ({ role, modalId, login }) => {
   const dispatch = useDispatch();
+  const disabled = role === "admin";
   const books = useSelector((state) => state.books.books);
+
   const {
     register,
     handleSubmit,
@@ -19,8 +21,6 @@ const UserForm = ({ role, modalId, login }) => {
     control,
     formState: { errors }
   } = useForm();
-
-  const disabled = role === "admin";
 
   const onSubmit = (data) => console.log(data);
 
