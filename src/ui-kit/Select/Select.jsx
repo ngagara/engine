@@ -38,50 +38,53 @@ export const Select = ({
   };
 
   return (
-    <div
-      ref={ref}
-      onClick={toggleOptions}
-      className={classNames(styles.select, { [className]: className })}
-    >
+    <div className={styles.root}>
       {labelSelect && <label>{labelSelect}</label>}
       <div
-        className={classNames(styles.selectContainer, {
-          [styles.selectContainerDisabled]: disabled
-        })}
+        ref={ref}
+        onClick={toggleOptions}
+        className={classNames(styles.select, { [className]: className })}
       >
-        <button
-          disabled={disabled}
-          type="button"
-          className={styles.selectButton}
-        >
-          {selectedOption}
-        </button>
         <div
-          className={classNames(styles.selectControl, {
-            [styles.selectControlActive]: isOptionsOpen
-          })}
-        ></div>
-        <ul
-          className={classNames(styles.selectOptions, {
-            [styles.selectOptionsShow]: isOptionsOpen
+          className={classNames(styles.selectContainer, {
+            [styles.selectContainerDisabled]: disabled
           })}
         >
-          {options &&
-            options.map((option) => (
-              <li
-                className={classNames(styles.selectOption, {
-                  [styles.selectOptionSelected]: option.label === selectedOption
-                })}
-                key={option.value}
-                value={option.value}
-                onClick={() =>
-                  setSelectedThenCloseDropdown(option.label, option.value)
-                }
-              >
-                {option.label}
-              </li>
-            ))}
-        </ul>
+          <button
+            disabled={disabled}
+            type="button"
+            className={styles.selectButton}
+          >
+            {selectedOption}
+          </button>
+          <div
+            className={classNames(styles.selectControl, {
+              [styles.selectControlActive]: isOptionsOpen
+            })}
+          ></div>
+          <ul
+            className={classNames(styles.selectOptions, {
+              [styles.selectOptionsShow]: isOptionsOpen
+            })}
+          >
+            {options &&
+              options.map((option) => (
+                <li
+                  className={classNames(styles.selectOption, {
+                    [styles.selectOptionSelected]:
+                      option.label === selectedOption
+                  })}
+                  key={option.value}
+                  value={option.value}
+                  onClick={() =>
+                    setSelectedThenCloseDropdown(option.label, option.value)
+                  }
+                >
+                  {option.label}
+                </li>
+              ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

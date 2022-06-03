@@ -1,16 +1,18 @@
 @import '../../_variables.scss';
 @import '../../_mixins.scss';
 
-.select {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 
+.root {
   label {
     @include text-small($color: $text_low_accent);
     margin-bottom: 2px;
     user-select: none;
   }
+}
+.select {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
   &Container {
     position: relative;
