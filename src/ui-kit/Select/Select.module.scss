@@ -55,6 +55,9 @@
   }
 
   &Button {
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
     background-color: $bg_third_light;
     border: 2px solid $el_accent_high;
     @include text-regular($color: $text_high_accent);
@@ -63,7 +66,6 @@
     padding: 8px 10px;
     cursor: pointer;
     width: 100%;
-    text-align: left;
     user-select: none;
   }
 
