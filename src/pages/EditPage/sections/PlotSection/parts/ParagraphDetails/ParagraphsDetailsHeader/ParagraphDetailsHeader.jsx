@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleModal } from '../../../../../../../store/supportSlice';
-import { Modal, Button } from './../../../../../../../ui-kit';
+import { useDispatch, useSelector } from "react-redux";
+import { toggleModal } from "../../../../../../../store/supportSlice";
+import { Modal, Button } from "./../../../../../../../ui-kit";
 import { SectionContainer } from "../../../../parts/SectionContainer/SectionContainer";
 import { TrashIcon, ArrowLeftIcon, SaveIcon } from "../../../../../../../img/icons";
 import styles from "./ParagraphDetailsHeader.module.scss";

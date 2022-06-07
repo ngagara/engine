@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../../../../store/supportSlice";
 import { ReloadIcon } from "../../../../img/icons";
 import { Button, Input, Select, Checkbox } from "../../../../ui-kit";
-import { setDefaultRole, passwordGenerate } from "../../../../helpers";
+import { setDefaultRole, passwordGenerate } from "../../../../utils";
 import { options } from "../../../../constants";
 import styles from "./UserForm.module.scss";
 

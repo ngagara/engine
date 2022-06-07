@@ -19,7 +19,7 @@ export const LoginPage = () => {
         title={"Авторизация"}
         component={<AuthForm />}
         active={login}
-        id={'login'}
+        id={"login"}
       />
     </>
   );

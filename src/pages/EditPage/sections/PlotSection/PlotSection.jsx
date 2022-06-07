@@ -1,5 +1,5 @@
-import Paragraphs from './parts/Paragraphs/Paragraphs';
-import ParagraphDetails from './parts/ParagraphDetails/ParagraphDetails';
+import Paragraphs from "./parts/Paragraphs/Paragraphs";
+import ParagraphDetails from "./parts/ParagraphDetails/ParagraphDetails";
 import styles from "./PlotSection.module.scss";
 
 const PlotSection = () => {
