@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import classNames from "classnames";
 import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,6 +10,7 @@ import { options } from "../../../../constants";
 import styles from "./UserForm.module.scss";
 
 const UserForm = ({ role, modalId, login }) => {
+  const [copyBooks, setCopyBooks] = useState([]);
   const dispatch = useDispatch();
   const disabled = role === "admin";
   const books = useSelector((state) => state.books.books);
@@ -26,6 +27,9 @@ const UserForm = ({ role, modalId, login }) => {
 
   useEffect(() => {
     setValue("login", login);
+    // books.forEach((book) => {
+    //   setCopyBooks((prev) => [...prev, book]);
+    // });
   }, []);
 
   return (

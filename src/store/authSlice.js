@@ -8,19 +8,76 @@ const supportSlice = createSlice({
         id: 1,
         name: "admin@test.ru",
         role: "admin",
-        books: ["Преступный Маг", "Не маг", "Маг но не приступный"]
+        books: [
+          {
+            id: 1,
+            name: "Книга 1",
+            image:
+              "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          },
+          {
+            id: 2,
+            name: "Книга 2",
+            image:
+              "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          }
+        ]
       },
       {
         id: 2,
         name: "author@test.ru",
         role: "author",
-        books: ["Преступный Маг", "Маг", "Не маг но приступный"]
+        books: [
+          {
+            id: 1,
+            name: "Книга 1",
+            image:
+              "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          },
+          {
+            id: 2,
+            name: "Книга 2",
+            image:
+              "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          },
+          {
+            id: 3,
+            name: "Книга 3",
+            image:
+              "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          },
+          {
+            id: 4,
+            name: "Книга 4",
+            image:
+              "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          },
+          {
+            id: 5,
+            name: "Книга 5",
+            image:
+              "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          }
+        ]
       },
       {
         id: 3,
         name: "test@test.ru",
         role: "tester",
-        books: ["Преступный Маг", "Не маг"]
+        books: [
+          {
+            id: 1,
+            name: "Книга 1",
+            image:
+              "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          },
+          {
+            id: 2,
+            name: "Книга 2",
+            image:
+              "https://images.unsplash.com/photo-1460194436988-671f763436b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          }
+        ]
       }
     ]
   },
