@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import classNames from "classnames";
 import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,11 +9,12 @@ import { setDefaultRole, passwordGenerate } from "../../../../utils";
 import { options } from "../../../../constants";
 import styles from "./UserForm.module.scss";
 
-const UserForm = ({ role, modalId, login }) => {
-  const [copyBooks, setCopyBooks] = useState([]);
+const UserForm = ({ role, modalId, login, userbooks }) => {
   const dispatch = useDispatch();
+  const all_books = useSelector((state) => state.books.books);
+
   const disabled = role === "admin";
-  const books = useSelector((state) => state.books.books);
+  const available_books = role === "admin" ? all_books : userbooks;
 
   const {
     register,
@@ -27,9 +28,6 @@ const UserForm = ({ role, modalId, login }) => {
 
   useEffect(() => {
     setValue("login", login);
-    // books.forEach((book) => {
-    //   setCopyBooks((prev) => [...prev, book]);
-    // });
   }, []);
 
   return (
@@ -81,8 +79,8 @@ const UserForm = ({ role, modalId, login }) => {
           Доступные книги
         </p>
         <div className={styles.formBooksContainer}>
-          {books &&
-            books.map((book) => (
+          {available_books &&
+            available_books.map((book) => (
               <Checkbox
                 key={book.id}
                 label={book.name}

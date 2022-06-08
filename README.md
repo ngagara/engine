@@ -16,7 +16,6 @@ https://www.figma.com/file/2s5bZoEOQGMRdJonqphJo2/engine?node-id=2%3A3
 // redux > reduxquery > reduxthunk
 // разбить сеттингс и имаджес на комп
 // firebase auth
-// отцентровать текст
 // vueport
 // тост по сохранению
 // дропдауны остаются открытыми после перехода, посмотреть доку или своё решение
@@ -32,6 +31,10 @@ https://www.figma.com/file/2s5bZoEOQGMRdJonqphJo2/engine?node-id=2%3A3
 // нет доступных книг если сняты все галки
 // книги не могут одинаково называться
 //кнопки по интеру
+//можно менять логин?
+//одна модалка?
+// пустой список юзеров?
+// роли обязательно поле
 
 https://www.youtube.com/watch?v=nqYn7HbkKCg
 https://codesandbox.io/s/5h1q5?file=/src/index.js:93-103

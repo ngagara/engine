@@ -18,7 +18,7 @@ export const UsersPage = () => {
                 key={user.id}
                 login={user.name}
                 role={user.role}
-                books={user.books}
+                userbooks={user.books}
               />
             );
           })}
