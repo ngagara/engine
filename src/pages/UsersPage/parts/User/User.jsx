@@ -1,51 +1,37 @@
-import { useEffect } from "react";
-import UserForm from "../UserForm/UserForm";
-import { useDispatch, useSelector } from "react-redux";
-import { setModalState } from "../../../../store/supportSlice";
+import { useDispatch } from "react-redux";
 import { toggleModal } from "../../../../store/supportSlice";
-import { Container, Modal } from "../../../../ui-kit";
+import { setUser } from "../../../../store/authSlice";
+import { Container } from "../../../../ui-kit";
 import { TrashIcon } from "../../../../img/icons";
 import { setDefaultRole, getAvailableBooks } from "../../../../utils";
 import styles from "./User.module.scss";
 
-const User = ({ id, login, role, userbooks }) => {
+const User = ({ user }) => {
   const dispatch = useDispatch();
-  const modals = useSelector((state) => state.support.modals);
-  const users = useSelector((state) => state.auth.users);
 
-  useEffect(() => {
-    users.forEach((user) => {
-      dispatch(setModalState(user.id));
-    });
-  }, []);
+  const { name, role, books } = user;
+
+  const handeleOpenEditModal = () => {
+    dispatch(setUser(user));
+    dispatch(toggleModal("edit_user"));
+  };
 
   return (
     <>
       <Container className={styles.user}>
-        <p
-          className={styles.userLogin}
-          onClick={() => dispatch(toggleModal(id.toString()))}
-        >
-          {login}
+        <p className={styles.userLogin} onClick={() => handeleOpenEditModal()}>
+          {name}
         </p>
         <p className={styles.userRole}>{setDefaultRole(role)}</p>
         {role !== "admin" && (
           <>
-            <p className={styles.userBooks}>{getAvailableBooks(userbooks)}</p>
+            <p className={styles.userBooks}>{getAvailableBooks(books)}</p>
             <div className={styles.userIcon}>
               <TrashIcon />
             </div>
           </>
         )}
       </Container>
-      <Modal title={"Пользователь"} active={modals[id]} id={id.toString()}>
-        <UserForm
-          login={login}
-          modalId={id.toString()}
-          userbooks={userbooks}
-          role={role}
-        />
-      </Modal>
     </>
   );
 };

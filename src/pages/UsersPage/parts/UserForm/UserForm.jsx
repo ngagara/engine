@@ -9,12 +9,13 @@ import { setDefaultRole, passwordGenerate } from "../../../../utils";
 import { options } from "../../../../constants";
 import styles from "./UserForm.module.scss";
 
-const UserForm = ({ role, modalId, login, userbooks }) => {
+const UserForm = ({ modalId }) => {
   const dispatch = useDispatch();
   const all_books = useSelector((state) => state.books.books);
+  const { role, name, books } = useSelector((state) => state.auth.user);
 
   const disabled = role === "admin";
-  const available_books = role === "admin" ? all_books : userbooks;
+  const available_books = role === "admin" ? all_books : books;
 
   const {
     register,
@@ -27,8 +28,9 @@ const UserForm = ({ role, modalId, login, userbooks }) => {
   const onSubmit = (data) => console.log(data);
 
   useEffect(() => {
-    setValue("login", login);
-  }, []);
+    setValue("login", name);
+    setValue("role", role);
+  }, [name, role]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
