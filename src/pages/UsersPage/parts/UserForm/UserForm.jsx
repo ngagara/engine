@@ -12,9 +12,12 @@ import styles from "./UserForm.module.scss";
 const UserForm = ({ modalId }) => {
   const dispatch = useDispatch();
   const all_books = useSelector((state) => state.books.books);
-  const { role, name, books } = useSelector((state) => state.auth.user);
+  const { role, name, password, books } = useSelector(
+    (state) => state.auth.user
+  );
 
   const disabled = role === "admin";
+  // const read_only = role !== null;
   const available_books = role === "admin" ? all_books : books;
 
   const {
@@ -30,6 +33,7 @@ const UserForm = ({ modalId }) => {
   useEffect(() => {
     setValue("login", name);
     setValue("role", role);
+    setValue("password", password);
   }, [name, role]);
 
   return (
@@ -41,6 +45,7 @@ const UserForm = ({ modalId }) => {
           className={styles.formInput}
           required={errors.login}
           disabled={disabled}
+          // readOnly={read_only}
         />
         <Input
           label={"Пароль"}
@@ -69,17 +74,16 @@ const UserForm = ({ modalId }) => {
             selectedValue={value}
             onChangeOption={onChange}
             setDefaultLabel={setDefaultRole}
+            required={errors.role}
           />
         )}
       />
-      <div className={styles.formBooks}>
-        <p
-          className={classNames(styles.formBooksTitle, {
-            [styles.formBooksTitleDisabled]: disabled
-          })}
-        >
-          Доступные книги
-        </p>
+      <div
+        className={classNames(styles.formBooks, {
+          [styles.formBooksDisabled]: disabled
+        })}
+      >
+        <p className={styles.formBooksTitle}>Доступные книги</p>
         <div className={styles.formBooksContainer}>
           {available_books &&
             available_books.map((book) => (

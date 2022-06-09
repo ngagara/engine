@@ -11,6 +11,7 @@ export const Input = ({ ...props }) => {
     name,
     required,
     invalid,
+    readOnly,
     placeholder
   } = props;
 
@@ -26,6 +27,7 @@ export const Input = ({ ...props }) => {
         placeholder={placeholder ? placeholder : "-"}
         disabled={disabled}
         required={required}
+        readOnly={readOnly}
         {...register}
       />
     </div>

@@ -3,7 +3,12 @@
 
 
 .root {
+  display: flex;
+  align-items: self-start;
+  flex-direction: column;
+
   label {
+    display: inline-block;
     @include text-small($color: $text_low_accent);
     margin-bottom: 2px;
     user-select: none;
@@ -26,7 +31,15 @@
       background-color: $el_accent_low;
     }
 
+    &:hover .selectControlRequired {
+        border: 2px solid $el_accent_low;
+    }
+
     &:hover .selectOptions {
+      border: 2px solid $el_accent_low;
+    }
+
+    &:hover .selectOptionsRequired {
       border: 2px solid $el_accent_low;
     }
 
@@ -67,6 +80,10 @@
     cursor: pointer;
     width: 100%;
     user-select: none;
+
+    &Required {
+      border: 2px solid $red;
+    }
   }
 
   &Control {
@@ -87,11 +104,15 @@
     &Active {
       transform: rotate(180deg);
     }
+
+    &Required {
+      border: 2px solid $red;
+    }
   }
 
   &Options {
     position: absolute;
-    top: 32px;
+    top: 31px;
     left: 0;
     right: 0;
     background-color: $bg_third_light;
@@ -103,6 +124,10 @@
 
     &Show {
       visibility: visible;
+    }
+
+    &Required {
+      border: 2px solid $red;
     }
   }
 

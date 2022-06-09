@@ -9,7 +9,8 @@ export const Select = ({
   className,
   selectedValue,
   onChangeOption,
-  setDefaultLabel
+  setDefaultLabel,
+  required
 }) => {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(selectedValue);
@@ -53,18 +54,22 @@ export const Select = ({
           <button
             disabled={disabled}
             type="button"
-            className={styles.selectButton}
+            className={classNames(styles.selectButton, {
+              [styles.selectButtonRequired]: required
+            })}
           >
             {selectedOption}
           </button>
           <div
             className={classNames(styles.selectControl, {
-              [styles.selectControlActive]: isOptionsOpen
+              [styles.selectControlActive]: isOptionsOpen,
+              [styles.selectControlRequired]: required
             })}
           ></div>
           <ul
             className={classNames(styles.selectOptions, {
-              [styles.selectOptionsShow]: isOptionsOpen
+              [styles.selectOptionsShow]: isOptionsOpen,
+              [styles.selectOptionsRequired]: required
             })}
           >
             {options &&
