@@ -4,7 +4,7 @@ import plug from "../img/plug.png";
 const booksSlice = createSlice({
   name: "books",
   initialState: {
-    available_books: [],
+    books_collection: [],
     new_book: {
       id: 1,
       name: "Новая книга",
@@ -59,15 +59,19 @@ const booksSlice = createSlice({
   reducers: {
     //утанавливает новую книгу при первом рендере страницы
     setNewBook(state) {
-      if (state.books.length === 0) state.books.push(state.new_book);
+      if (state.books.length === 0)
+        state.books = [...state.books, state.new_book];
     },
     //устанавливает новую книгу при нажатии кнопки добавить
     addNewBook(state) {
       let prevId = state.books[state.books.length - 1].id;
-      state.books.push({
-        ...state.new_book,
-        id: (prevId += 1)
-      });
+      state.books = [
+        ...state.books,
+        {
+          ...state.new_book,
+          id: (prevId += 1)
+        }
+      ];
     },
     setEditBook(state, action) {
       state.books.forEach((book) => {
@@ -76,14 +80,12 @@ const booksSlice = createSlice({
         }
       });
     },
-    setAvailableBooks(state, action) {
-      state.books.forEach((book) => {
-        // console.log(action.payload);
-
-        if (book.name === action.payload) {
-          state.available_books = [...book.name];
-        }
-      });
+    setBooksСollection(state) {
+      let books_list = state.books.reduce((accum, book) => {
+        accum.push(book.name);
+        return accum;
+      }, []);
+      state.books_collection = books_list;
     }
   }
 });
@@ -92,6 +94,6 @@ export const {
   setNewBook,
   addNewBook,
   setEditBook,
-  setAvailableBooks
+  setBooksСollection
 } = booksSlice.actions;
 export default booksSlice.reducer;

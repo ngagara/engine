@@ -1,18 +1,19 @@
 import styles from "./Checkbox.module.scss";
 
-export const Checkbox = ({ label, checked, name, register, disabled }) => {
+export const Checkbox = ({ value, checked, register, disabled }) => {
   return (
     <div className={styles.checkbox}>
       <input
-        id={name}
+        id={value}
         checked={checked}
         disabled={disabled}
         type="checkbox"
-        value={name}
+        value={value}
+        name={value}
         className={styles.checkboxInput}
         {...register}
       />
-      {label && <label htmlFor={name}>{label}</label>}
+      {value && <label htmlFor={value}>{value}</label>}
     </div>
   );
 };

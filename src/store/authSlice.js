@@ -30,7 +30,7 @@ const supportSlice = createSlice({
         name: "test@test.ru",
         role: "tester",
         password: "123",
-        books: ["Книга 5", "Книга 6", "Книга 7", "Книга 8"]
+        books: ["Книга 5", "Книга 6", "Книга 7"]
       },
       {
         id: 4,

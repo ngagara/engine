@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import classNames from "classnames";
 import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
+import { setBooksСollection } from "../../../../store/booksSlice";
 import { toggleModal } from "../../../../store/supportSlice";
 import { ReloadIcon } from "../../../../img/icons";
 import { Button, Input, Select, Checkbox } from "../../../../ui-kit";
@@ -22,19 +23,22 @@ const UserForm = ({ modalId }) => {
     (state) => state.auth.user
   );
 
-  const { available_books } = useSelector((state) => state.books);
+  const { books_collection } = useSelector((state) => state.books);
 
   const disabled = role === "admin";
 
-  console.log(available_books);
-
   const onSubmit = (data) => console.log(data);
+
+  useEffect(() => {
+    dispatch(setBooksСollection());
+  }, []);
 
   useEffect(() => {
     setValue("name", name);
     setValue("role", role);
     setValue("password", password);
-  }, [name, role]);
+    setValue("books", books);
+  }, [name, role, password, books]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -86,8 +90,8 @@ const UserForm = ({ modalId }) => {
       >
         <p className={styles.formBooksTitle}>Доступные книги</p>
         <div className={styles.formBooksContainer}>
-          {available_books &&
-            available_books.map((book) => (
+          {books_collection &&
+            books_collection.map((book) => (
               <Checkbox
                 key={book}
                 value={book}
@@ -112,4 +116,4 @@ const UserForm = ({ modalId }) => {
   );
 };
 
-export default UserForm;
+export default React.memo(UserForm);

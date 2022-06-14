@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { toggleModal } from "../../../../store/supportSlice";
-import { setAvailableBooks } from "../../../../store/booksSlice";
 import { setUser } from "../../../../store/authSlice";
 import { Container } from "../../../../ui-kit";
 import { TrashIcon } from "../../../../img/icons";
@@ -14,14 +14,13 @@ const User = ({ user }) => {
 
   const handeleOpenEditModal = () => {
     dispatch(setUser(user));
-    dispatch(setAvailableBooks(books));
     dispatch(toggleModal("edit_user"));
   };
 
   return (
     <>
       <Container className={styles.user}>
-        <p className={styles.userLogin} onClick={() => handeleOpenEditModal()}>
+        <p className={styles.userLogin} onClick={handeleOpenEditModal}>
           {name}
         </p>
         <p className={styles.userRole}>{setDefaultRole(role)}</p>

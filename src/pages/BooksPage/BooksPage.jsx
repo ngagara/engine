@@ -24,8 +24,8 @@ export const BooksPage = () => {
 
   return (
     <section className={styles.page}>
-      <Container p30 className={styles.container}>
-        <Container className={styles.containerButton}>
+      <Container p30 className={styles.pageContainer}>
+        <Container className={styles.pageContainerButton}>
           <Button disabled={disabledButton} onClick={handelAddNewBook}>
             Добавить книгу
           </Button>
@@ -36,7 +36,7 @@ export const BooksPage = () => {
             />
           )}
         </Container>
-        <Container className={styles.containerPaper}>
+        <Container className={styles.pageContainerPapers}>
           {books &&
             books.map((paper) => (
               <Paper
