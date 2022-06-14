@@ -4,7 +4,7 @@ import plug from "../img/plug.png";
 const booksSlice = createSlice({
   name: "books",
   initialState: {
-    // вынести в константу
+    available_books: [],
     new_book: {
       id: 1,
       name: "Новая книга",
@@ -75,9 +75,23 @@ const booksSlice = createSlice({
           state.edit_book = { ...book };
         }
       });
+    },
+    setAvailableBooks(state, action) {
+      state.books.forEach((book) => {
+        // console.log(action.payload);
+
+        if (book.name === action.payload) {
+          state.available_books = [...book.name];
+        }
+      });
     }
   }
 });
 
-export const { setNewBook, addNewBook, setEditBook } = booksSlice.actions;
+export const {
+  setNewBook,
+  addNewBook,
+  setEditBook,
+  setAvailableBooks
+} = booksSlice.actions;
 export default booksSlice.reducer;

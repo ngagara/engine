@@ -28,7 +28,7 @@ export const getAvailableBooks = (books) => {
   const rest =
     books.length > maxBooks ? `и еще ${books.length - maxBooks}` : "";
   books.forEach((book, index) => {
-    if (index < maxBooks) available_book.push(book.name);
+    if (index < maxBooks) available_book.push(book);
   });
   return books.length
     ? `${available_book.join(", ")} ${rest}`

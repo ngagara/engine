@@ -11,15 +11,6 @@ import styles from "./UserForm.module.scss";
 
 const UserForm = ({ modalId }) => {
   const dispatch = useDispatch();
-  const all_books = useSelector((state) => state.books.books);
-  const { role, name, password, books } = useSelector(
-    (state) => state.auth.user
-  );
-
-  const disabled = role === "admin";
-  // const read_only = role !== null;
-  const available_books = role === "admin" ? all_books : books;
-
   const {
     register,
     handleSubmit,
@@ -27,11 +18,20 @@ const UserForm = ({ modalId }) => {
     control,
     formState: { errors }
   } = useForm();
+  const { role, name, password, books } = useSelector(
+    (state) => state.auth.user
+  );
+
+  const { available_books } = useSelector((state) => state.books);
+
+  const disabled = role === "admin";
+
+  console.log(available_books);
 
   const onSubmit = (data) => console.log(data);
 
   useEffect(() => {
-    setValue("login", name);
+    setValue("name", name);
     setValue("role", role);
     setValue("password", password);
   }, [name, role]);
@@ -41,11 +41,12 @@ const UserForm = ({ modalId }) => {
       <div className={styles.formInputs}>
         <Input
           label={"Имя пользователя"}
-          register={{ ...register("login", { required: true }) }}
+          register={{ ...register("name", { required: true }) }}
           className={styles.formInput}
-          required={errors.login}
+          required={errors.name}
           disabled={disabled}
           // readOnly={read_only}
+          // const read_only = role !== null;
         />
         <Input
           label={"Пароль"}
@@ -88,10 +89,9 @@ const UserForm = ({ modalId }) => {
           {available_books &&
             available_books.map((book) => (
               <Checkbox
-                key={book.id}
-                label={book.name}
-                name={book.name}
-                disabled={disabled}
+                key={book}
+                value={book}
+                register={{ ...register("books") }}
               />
             ))}
         </div>

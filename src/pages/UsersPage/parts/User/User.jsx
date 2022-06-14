@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { toggleModal } from "../../../../store/supportSlice";
+import { setAvailableBooks } from "../../../../store/booksSlice";
 import { setUser } from "../../../../store/authSlice";
 import { Container } from "../../../../ui-kit";
 import { TrashIcon } from "../../../../img/icons";
@@ -13,6 +14,7 @@ const User = ({ user }) => {
 
   const handeleOpenEditModal = () => {
     dispatch(setUser(user));
+    dispatch(setAvailableBooks(books));
     dispatch(toggleModal("edit_user"));
   };
 

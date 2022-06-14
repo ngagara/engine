@@ -8,13 +8,13 @@ import styles from "./HeaderUsers.module.scss";
 const HeaderUsers = () => {
   const dispatch = useDispatch();
   const { add_user } = useSelector((state) => state.support.modals);
-  const all_books = useSelector((state) => state.books.books);
+  // const all_books = useSelector((state) => state.books.books);
 
   const empty_user = {
     id: null,
     name: null,
     role: null,
-    books: all_books
+    books: []
   };
 
   const handeleOpenAddModal = () => {
