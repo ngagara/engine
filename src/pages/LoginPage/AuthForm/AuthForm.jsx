@@ -1,8 +1,10 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "../../../store/authSlice";
 import { useForm } from "react-hook-form";
 import { Button, Input, Alert } from "../../../ui-kit";
+import axios from "axios";
 import styles from "./AuthForm.module.scss";
 
 const AuthForm = () => {
@@ -18,30 +20,40 @@ const AuthForm = () => {
   const password = useSelector((state) => state.auth);
   const required = errors.password && errors.password.type === "required";
 
-  // временное решение пока нет нормально авторизации
   const pushBooksPage = (data) => {
-    // const auth = getAuth();
-    // signInWithEmailAndPassword(auth, data.login, data.password)
-    //   .then((userCredential) => {
-    //     // Signed in
-    //     const user = userCredential.user;
-    //     console.log(user);
-    //     // ...
-    //   })
-    //   .catch((error) => {
-    //     const errorCode = error.code;
-    //     const errorMessage = error.message;
-    //   });
-    // if (data.password !== password) {
-    //   setError("password");
-    // } else {
-    //   dispatch(setLogin());
-    //   navigate("/books", { replace: true });
-    // }
+    // setError("password");
+    // dispatch(setLogin());
+    // navigate("/books", { replace: true });
   };
 
+  function handleErrors(response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return response;
+  }
+  fetch(`http://185.225.34.18:3000/api/auth/login`, {
+    method: "POST",
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify({
+      login: "admin",
+      password: "admin"
+    })
+  })
+    .then(handleErrors)
+    .then(function (response) {
+      console.log("ok");
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
   return (
-    <form className={styles.auth} onSubmit={handleSubmit(pushBooksPage)}>
+    <form
+      className={styles.auth}
+      // onSubmit={handleSubmit(pushBooksPage)}
+      onClick={pushBooksPage}
+    >
       <Input
         className={styles.authInput}
         register={{ ...register("login", { required: true }) }}
@@ -80,4 +92,4 @@ const AuthForm = () => {
   );
 };
 
-export default AuthForm;
+export default React.memo(AuthForm);
