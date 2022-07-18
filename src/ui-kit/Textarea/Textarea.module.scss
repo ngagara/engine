@@ -14,19 +14,4 @@
     border: 2px solid $el_accent_low;
     outline: none;
   }
-
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-   
-  &::-webkit-scrollbar-track {
-    background-color: $bg_second_light;
-    border-radius: 10px;
-    margin: 5px;
-  }
-   
-  &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: $el_accent_disabled;
-  }
 }

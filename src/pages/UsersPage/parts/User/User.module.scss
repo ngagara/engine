@@ -10,6 +10,10 @@
    @include text-regular;
    border-bottom: 1px solid $bg_second_light;
 
+   &:hover {
+     background-color: $bg_second_light
+   }
+
    &Login {
      color: $text_high_accent;
     cursor: pointer;

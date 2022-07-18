@@ -27,14 +27,13 @@
 
   &Content {
     overflow: hidden;
-    transition: max-height .4s, padding .4s;
+    transition: all .6s ease;
     max-height: 0;
     padding: 0 30px 0 30px;
 
     &Active {
-     overflow: visible;
-     max-height: 300px;
-     padding: 0 30px 15px 30px;
+     max-height: 999px;
+     padding-bottom: 15px;
     }
   }
 }

@@ -1,10 +1,14 @@
-// import styles from "./Preloader.module.scs";
+import styles from "./Preloader.module.scss";
 
 export const Preloader = () => {
-  console.log("asdads");
   return (
-    <div>
-
+    <div className={styles.root}>
+      <div className={styles.preloader}>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };

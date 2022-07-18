@@ -1,0 +1,48 @@
+@import '../../_variables.scss';
+@import '../../_mixins.scss';
+
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  @include text-regular;
+  position: absolute;
+  bottom: 30px;
+  left: -260px;
+  opacity: 0;
+  width: 244px;
+  height: 50px;
+  border: 1px solid $icon_high_accent;
+  border-radius: 8px;
+
+&Show {
+  animation: show .3s forwards;
+}
+
+&Hide {
+  animation: hide .3s forwards;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+svg path {
+  fill: $icon_high_accent;
+}
+
+}
+@keyframes show {
+  0% {left: -260px;
+    opacity: 0;
+  }
+  100% {left: 30px;
+    opacity: 1;
+  }
+}
+
+
+

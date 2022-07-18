@@ -19,3 +19,4 @@ export { BoldIcon } from "./BoldIcon";
 export { UnderlinedIcon } from "./UnderlinedIcon";
 export { ItalicIcon } from "./ItalicIcon";
 export { SaveIcon } from "./SaveIcon";
+export { CloseIcon } from "./CloseIcon";

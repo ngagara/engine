@@ -9,3 +9,5 @@ export { Textarea } from "./Textarea/Textarea";
 export { Select } from "./Select/Select";
 export { FileInput } from "./FileInput/FileInput";
 export { Checkbox } from "./Checkbox/Checkbox";
+export { Preloader } from "./Preloader/Preloader";
+export { Toast } from "./Toast/Toast";

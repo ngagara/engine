@@ -2,7 +2,6 @@
 @import './_variables.scss';
 @import './vendor/index.scss';
 
-
 html,
 body {
   font-family: $font;
@@ -36,4 +35,17 @@ svg path {
   flex-direction: column;
   min-height: 100vh;
   min-width: 1440px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $el_accent_disabled;
+
+  &:hover {
+    background-color: $el_accent_low;
+  }
 }

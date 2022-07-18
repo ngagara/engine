@@ -1,11 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../../store/supportSlice";
-import { Container, Button, Modal } from "../../ui-kit";
+import { Container, Button, Modal, Toast } from "../../ui-kit";
 import AuthForm from "./AuthForm/AuthForm";
 import styles from "./LoginPage.module.scss";
 
 export const LoginPage = () => {
-
   const dispatch = useDispatch();
   const { login } = useSelector((state) => state.support.modals);
 
@@ -21,7 +20,7 @@ export const LoginPage = () => {
         active={login}
         id={"login"}
       />
+      <Toast />
     </>
   );
 };
-

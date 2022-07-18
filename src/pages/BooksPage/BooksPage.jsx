@@ -42,7 +42,7 @@ export const BooksPage = () => {
               <Paper
                 className={styles.paper}
                 key={paper.id}
-                src={paper.src}
+                src={paper.image}
                 title={paper.name}
                 id={paper.id}
               />

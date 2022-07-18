@@ -119,8 +119,10 @@
     border: 2px solid $el_accent_high;
     @include text-regular($color: $text_high_accent);
     visibility: hidden;
+    overflow: hidden;
     list-style: none;
     border-radius: 4px;
+
 
     &Show {
       visibility: visible;
